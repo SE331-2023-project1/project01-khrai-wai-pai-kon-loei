@@ -1,0 +1,184 @@
+{
+  "students": [
+    {
+      "name": "Emily",
+      "surname": "Johnson",
+      "studentid": "EJ2023",
+      "profileimage": "image_link_1",
+      "courselist": ["Computer Science", "Mathematics"],
+      "teacherID": "T101",
+      "comment": "Emily is a dedicated student with a strong passion for coding."
+    },
+    {
+      "name": "Daniel",
+      "surname": "Martinez",
+      "studentid": "DM2023",
+      "profileimage": "image_link_2",
+      "courselist": ["Mechanical Engineering", "Physics"],
+      "teacherID": "T102",
+      "comment": "Daniel has a knack for solving complex engineering problems."
+    },
+    {
+      "name": "Sophia",
+      "surname": "Lee",
+      "studentid": "SL2023",
+      "profileimage": "image_link_3",
+      "courselist": ["Business Administration", "Economics"],
+      "teacherID": "T103",
+      "comment": "Sophia is a natural leader who excels in teamwork and organization."
+    },
+    {
+      "name": "Liam",
+      "surname": "Anderson",
+      "studentid": "LA2023",
+      "profileimage": "image_link_4",
+      "courselist": ["Biology", "Chemistry"],
+      "teacherID": "T104",
+      "comment": "Liam's curiosity about the natural world drives his studies in biology."
+    },
+    {
+      "name": "Olivia",
+      "surname": "Smith",
+      "studentid": "OS2023",
+      "profileimage": "image_link_5",
+      "courselist": ["Psychology", "Sociology"],
+      "teacherID": "T105",
+      "comment": "Olivia has a deep understanding of human behavior and a compassionate nature."
+    },
+    {
+      "name": "Ethan",
+      "surname": "Brown",
+      "studentid": "EB2023",
+      "profileimage": "image_link_6",
+      "courselist": ["Economics", "Statistics"],
+      "teacherID": "T106",
+      "comment": "Ethan's analytical skills shine in his economics studies."
+    },
+    {
+      "name": "Ava",
+      "surname": "Wilson",
+      "studentid": "AW2023",
+      "profileimage": "image_link_7",
+      "courselist": ["Fine Arts", "Graphic Design"],
+      "teacherID": "T107",
+      "comment": "Ava's artistic talents are evident in her captivating creations."
+    },
+    {
+      "name": "Jackson",
+      "surname": "Taylor",
+      "studentid": "JT2023",
+      "profileimage": "image_link_8",
+      "courselist": ["Political Science", "History"],
+      "teacherID": "T108",
+      "comment": "Jackson is deeply interested in global affairs and political ideologies."
+    },
+    {
+      "name": "Mia",
+      "surname": "Rodriguez",
+      "studentid": "MR2023",
+      "profileimage": "image_link_9",
+      "courselist": ["Journalism", "Communication"],
+      "teacherID": "T109",
+      "comment": "Mia has a passion for storytelling and investigative journalism."
+    },
+    {
+      "name": "Aiden",
+      "surname": "Martinez",
+      "studentid": "AM2023",
+      "profileimage": "image_link_10",
+      "courselist": ["Environmental Science", "Geology"],
+      "teacherID": "T110",
+      "comment": "Aiden's love for nature drives his studies in environmental science."
+    },
+    {
+      "name": "Isabella",
+      "surname": "Davis",
+      "studentid": "ID2023",
+      "profileimage": "image_link_11",
+      "courselist": ["Literature", "Creative Writing"],
+      "teacherID": "T111",
+      "comment": "Isabella's profound appreciation for literature is evident in her insightful interpretations."
+    },
+    {
+      "name": "Lucas",
+      "surname": "Johnson",
+      "studentid": "LJ2023",
+      "profileimage": "image_link_12",
+      "courselist": ["Physics", "Astrophysics"],
+      "teacherID": "T112",
+      "comment": "Lucas is a budding physicist with a fascination for the fundamental laws of the universe."
+    },
+    {
+      "name": "Mia",
+      "surname": "Patel",
+      "studentid": "MP2023",
+      "profileimage": "image_link_13",
+      "courselist": ["Medicine", "Genetics"],
+      "teacherID": "T113",
+      "comment": "Mia's dream of becoming a doctor is fueled by her compassion for others."
+    },
+    {
+      "name": "William",
+      "surname": "White",
+      "studentid": "WW2023",
+      "profileimage": "image_link_14",
+      "courselist": ["Architecture", "Urban Planning"],
+      "teacherID": "T114",
+      "comment": "William's architectural designs blend creativity and functionality."
+    },
+    {
+      "name": "Harper",
+      "surname": "Adams",
+      "studentid": "HA2023",
+      "profileimage": "image_link_15",
+      "courselist": ["History", "Archaeology"],
+      "teacherID": "T115",
+      "comment": "Harper's fascination with the past drives her studies in history."
+    },
+    {
+      "name": "Benjamin",
+      "surname": "Wilson",
+      "studentid": "BW2023",
+      "profileimage": "image_link_16",
+      "courselist": ["Mathematics", "Data Science"],
+      "teacherID": "T116",
+      "comment": "Benjamin's mathematical prowess is evident in his ability to tackle complex problems."
+    },
+    {
+      "name": "Evelyn",
+      "surname": "Moore",
+      "studentid": "EM2023",
+      "profileimage": "image_link_17",
+      "courselist": ["Music", "Composition"],
+      "teacherID": "T117",
+      "comment": "Evelyn's melodious talents shine through her musical performances."
+    },
+    {
+      "name": "Samuel",
+      "surname": "Thompson",
+      "studentid": "ST2023",
+      "profileimage": "image_link_18",
+      "courselist": ["Sociology", "Anthropology"],
+      "teacherID": "T118",
+      "comment": "Samuel's keen interest in societal dynamics drives his studies in sociology."
+    },
+    {
+      "name": "Victoria",
+      "surname": "Clark",
+      "studentid": "VC2023",
+      "profileimage": "image_link_19",
+      "courselist": ["Linguistics", "Language Acquisition"],
+      "teacherID": "T119",
+      "comment": "Victoria's fascination with languages and communication is evident."
+    },
+    {
+      "name": "Henry",
+      "surname": "Adams",
+      "studentid": "HA2023",
+      "profileimage": "image_link_20",
+      "courselist": ["Film Studies", "Cinematography"],
+      "teacherID": "T120",
+      "comment": "Henry's passion for cinema is reflected in his insightful analyses of film."
+    }
+  ]
+}

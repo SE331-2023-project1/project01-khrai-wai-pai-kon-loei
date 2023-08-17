@@ -14,29 +14,26 @@
 
 		<h3>Menu</h3>
 		<div class="menu">
-			<router-link to="/" class="button">
+			<RouterLink to="/" class="button">
 				<span class="material-symbols-outlined">home</span>
 				<span class="text">Home</span>
-			</router-link>
-			<router-link to="/about" class="button">
-				<span class="material-symbols-outlined">description</span>
-				<span class="text">About</span>
-			</router-link>
-			<router-link to="/team" class="button">
-				<span class="material-symbols-outlined">group</span>
-				<span class="text">Team</span>
-			</router-link>
-			<router-link to="/contact" class="button">
-				<span class="material-symbols-outlined">email</span>
-				<span class="text">Contact</span>
-			</router-link>
+			</RouterLink>
+			<RouterLink :to="{name: 'students' }" class="button">
+				<span class="material-symbols-outlined">person</span>
+				<span class="text">Student</span>
+			</RouterLink>
+			<RouterLink to="/teacher" class="button">
+				<span class="material-symbols-outlined">school</span>
+				<span class="text">Teacher</span>
+			</RouterLink>
 		</div>
 	</aside>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import logoURL from '../assets/logo.png'
+import { RouterLink } from 'vue-router'
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 

@@ -1,29 +1,37 @@
 <script setup lang="ts">
-import PassengerCard from '@/components/PassengerCard.vue'
-import type { Passenger } from '@/type'
+import type { Student } from '@/type'
 import { ref, watchEffect } from 'vue'
 import type { Ref } from 'vue'
-import PassengerService from '@/services/PassengerService'
+import StudentService from '@/services/StudentService'
 
-const passengers: Ref<Array<Passenger>> = ref([])
+
+const students: Ref<Array<Student>> = ref([])
 
 const props = defineProps({
   page: {
     type: Number,
     required: true
   }
+  // limit:{
+  //   type: Number,
+  //   required: true
+  // }
 })
 
 watchEffect(() => {
-  PassengerService.getPassengers(10, props.page).then((response) => {
-    passengers.value = response.data
+  StudentService.getStudents(10, 1).then((response) => {
+    console.log(response)
+    students.value = response.data
   })
 })
+
 </script>
 
+
 <template>
+  {{students}}
   <main class="container">
-    <PassengerCard v-for="passenger in passengers" :key="passenger.id" :passenger="passenger"></PassengerCard>
+    <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
   </main>
 </template>
 
