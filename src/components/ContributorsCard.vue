@@ -3,7 +3,7 @@ import type { Contributor } from "@/type";
 import type { PropType } from "vue";
 
 const props = defineProps({
-    contributor: {
+  contributor: {
     type: Object as PropType<Contributor>,
     require: true,
   },
@@ -12,15 +12,18 @@ const props = defineProps({
 
 <template>
   <article>
+    <span class="block text-center mt-4 mb-2 font-semibold text-lg">Contributor</span>
     <div class="card-wrapper">
-      <div class="card-body">
+      <div class="card-body flex items-center justify-center flex-col text-center">
         <img
-          class="w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
+          class="w-24 h-24 object-cover mb-2 rounded-full shadow-lg"
           :src="contributor?.profileimage"
         />
-        <h2>
+        <h2 class="text-lg font-semibold mb-1">
           {{ contributor?.name }} {{ contributor?.surname }}
-          <span>({{ contributor?.studentId }})</span>
+          <span class="text-gray-600 block text-sm"
+            >({{ contributor?.studentId }})</span
+          >
         </h2>
       </div>
     </div>
@@ -29,7 +32,7 @@ const props = defineProps({
 
 <style scoped>
 .card-wrapper {
-  padding: 20px;
+  padding: 30px;
   width: 350px;
   cursor: pointer;
   border: 1px solid #39495c;

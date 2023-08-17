@@ -31,7 +31,7 @@ watchEffect(() => {
 
 <template>
   <main class="container">
-    <ContributorsCard v-for="contributor in contributors" :key="contributor.studentid" :contributor="contributor"></ContributorsCard>
+    <ContributorsCard v-for="contributor in contributors" :key="contributor.studentId" :contributor="contributor"></ContributorsCard>
   </main>
 </template>
 
