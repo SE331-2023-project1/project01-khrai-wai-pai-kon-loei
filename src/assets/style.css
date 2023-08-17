@@ -7,13 +7,14 @@
   consider using classes instead of the `@apply` directive
   @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
 */
+
 .material-symbols-outlined {
     @apply text-[#9370DB] ;
   
     /* Set the icon color to purple */
   }
   aside {
-    @apply flex flex-col bg-white text-[#9370DB] w-[calc(2rem_+_32px)] overflow-hidden min-h-screen transition-[0.2s] duration-[ease-in-out] p-4 max-w-screen-md;
+    @apply flex flex-col bg-[#f3b3f0] text-[#d670db] w-[calc(2rem_+_32px)] overflow-hidden min-h-screen transition-[0.2s] duration-[ease-in-out] p-4 max-w-screen-md;
   }
 
   aside .flex {

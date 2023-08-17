@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
+
 </script>
 
 <template>
@@ -33,7 +34,7 @@ import Sidebar from './components/Sidebar.vue'
 }
 
 body {
-	background: var(--light);
+	background: rgb(197, 112, 216);
 }
 
 button {
