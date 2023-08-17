@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { Student } from '@/type'
+import type { Teacher } from '@/type'
 import { ref, watchEffect } from 'vue'
 import type { Ref } from 'vue'
 import TeacherService from '@/services/TeacherService'
 import  TeacherCard  from "../components/TeacherCard.vue";
 
 
-const teachers: Ref<Array<Student>> = ref([])
+const teachers: Ref<Array<Teacher>> = ref([])
 
 const props = defineProps({
   page: {
@@ -32,7 +32,7 @@ watchEffect(() => {
 <template>
   <!-- {{students}} -->
   <main class="container">
-    <TeacherCard v-for="teacher in teachers" :key="teacher.teacherid" :teacher="teacher"></TeacherCard>
+    <TeacherCard v-for="teacher in teachers" :key="teacher.teacherID" :teacher="teacher"></TeacherCard>
   </main>
 </template>
 

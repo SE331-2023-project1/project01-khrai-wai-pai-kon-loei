@@ -8,12 +8,11 @@ export interface Student {
   comment: String
 }
 
-export interface Student {
+export interface Teacher {
   name: String,
   surname: String,
-  studentid: String,
-  profileimage: String,
-  courselist: String[],
   teacherID: String,
-  comment: String
+  profileimage: String,
+  comment: String,
+  courselist: String[]
 }

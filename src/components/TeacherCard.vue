@@ -20,7 +20,7 @@ const props = defineProps({
         />
         <h2>
           {{ teacher?.name }} {{ teacher?.surname }}
-          <span>({{ teacher?.teacherid }})</span>
+          <span>({{ teacher?.teacherID }})</span>
         </h2>
         <p class="card-email">{{ teacher?.courselist }}</p>
         <p>{{ teacher?.comment }} {{ teacher?.teacherID }}</p>
