@@ -180,5 +180,167 @@
       "teacherID": "T120",
       "comment": "Henry's passion for cinema is reflected in his insightful analyses of film."
     }
+  ],
+    "teacher": [
+      {
+        "name": "John",
+        "surname": "Smith",
+        "teacherID": "AJ1234",
+        "profileimage": "url_to_image1",
+        "comment": "Excellent instructor",
+        "courselist": ["MATH101", "HIST102"]
+      },
+      {
+        "name": "Sarah",
+        "surname": "Johnson",
+        "teacherID": "SL5678",
+        "profileimage": "url_to_image2",
+        "comment": "Very knowledgeable",
+        "courselist": ["MATH101", "SCI103"]
+      },
+      {
+        "name": "Michael",
+        "surname": "Williams",
+        "teacherID": "BR7890",
+        "profileimage": "url_to_image3",
+        "comment": "Engaging teaching style",
+        "courselist": ["HIST102", "SCI103"]
+      },
+      {
+        "name": "Emily",
+        "surname": "Brown",
+        "teacherID": "EC4321",
+        "profileimage": "url_to_image4",
+        "comment": "Clear explanations",
+        "courselist": ["MATH101"]
+      },
+      {
+        "name": "Daniel",
+        "surname": "Jones",
+        "teacherID": "DJ8765",
+        "profileimage": "url_to_image5",
+        "comment": "Passionate about the subject",
+        "courselist": ["SCI103"]
+      },
+      {
+        "name": "Olivia",
+        "surname": "Davis",
+        "teacherID": "OD5678",
+        "profileimage": "url_to_image6",
+        "comment": "Patient and helpful",
+        "courselist": ["MATH101", "HIST102", "SCI103"]
+      },
+      {
+        "name": "James",
+        "surname": "Miller",
+        "teacherID": "JM2345",
+        "profileimage": "url_to_image7",
+        "comment": "Encourages critical thinking",
+        "courselist": ["HIST102"]
+      },
+      {
+        "name": "Ava",
+        "surname": "Wilson",
+        "teacherID": "AW9012",
+        "profileimage": "url_to_image8",
+        "comment": "Interactive class sessions",
+        "courselist": ["MATH101", "SCI103"]
+      },
+      {
+        "name": "William",
+        "surname": "Moore",
+        "teacherID": "WM3456",
+        "profileimage": "url_to_image9",
+        "comment": "Makes complex topics easy to understand",
+        "courselist": ["MATH101", "HIST102"]
+      },
+      {
+        "name": "Sophia",
+        "surname": "Taylor",
+        "teacherID": "ST7890",
+        "profileimage": "url_to_image10",
+        "comment": "Organized and structured lessons",
+        "courselist": ["SCI103"]
+      },
+      {
+        "name": "Benjamin",
+        "surname": "Anderson",
+        "teacherID": "BA1234",
+        "profileimage": "url_to_image11",
+        "comment": "Inspires creativity",
+        "courselist": ["MATH101", "SCI103"]
+      },
+      {
+        "name": "Mia",
+        "surname": "Thomas",
+        "teacherID": "MT5678",
+        "profileimage": "url_to_image12",
+        "comment": "Approachable and friendly",
+        "courselist": ["HIST102"]
+      },
+      {
+        "name": "Ethan",
+        "surname": "Jackson",
+        "teacherID": "EJ2345",
+        "profileimage": "url_to_image13",
+        "comment": "Gives real-world examples",
+        "courselist": ["MATH101", "SCI103"]
+      },
+      {
+        "name": "Isabella",
+        "surname": "Harris",
+        "teacherID": "IH9012",
+        "profileimage": "url_to_image14",
+        "comment": "Provides detailed feedback",
+        "courselist": ["HIST102"]
+      },
+      {
+        "name": "Liam",
+        "surname": "Clark",
+        "teacherID": "LC3456",
+        "profileimage": "url_to_image15",
+        "comment": "Empowers independent learning",
+        "courselist": ["MATH101", "HIST102"]
+      },
+      {
+        "name": "Charlotte",
+        "surname": "Young",
+        "teacherID": "CY5678",
+        "profileimage": "url_to_image16",
+        "comment": "Encourages collaborative projects",
+        "courselist": ["SCI103"]
+      },
+      {
+        "name": "Alexander",
+        "surname": "Lewis",
+        "teacherID": "AL2345",
+        "profileimage": "url_to_image17",
+        "comment": "Expert in the field",
+        "courselist": ["MATH101", "HIST102", "SCI103"]
+      },
+      {
+        "name": "Amelia",
+        "surname": "Walker",
+        "teacherID": "AW7890",
+        "profileimage": "url_to_image18",
+        "comment": "Engaging discussions",
+        "courselist": ["MATH101"]
+      },
+      {
+        "name": "Henry",
+        "surname": "Hall",
+        "teacherID": "HH1234",
+        "profileimage": "url_to_image19",
+        "comment": "Great at simplifying complex concepts",
+        "courselist": ["SCI103"]
+      },
+      {
+        "name": "Ella",
+        "surname": "King",
+        "teacherID": "EK5678",
+        "profileimage": "url_to_image20",
+        "comment": "Uses multimedia for interactive learning",
+        "courselist": ["MATH101", "SCI103"]
+      }
   ]
 }

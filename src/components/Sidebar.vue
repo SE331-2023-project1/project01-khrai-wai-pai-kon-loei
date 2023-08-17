@@ -22,7 +22,7 @@
 				<span class="material-symbols-outlined">person</span>
 				<span class="text">Student</span>
 			</RouterLink>
-			<RouterLink to="/teacher" class="button">
+			<RouterLink :to="{name: 'teachers'}" class="button">
 				<span class="material-symbols-outlined">school</span>
 				<span class="text">Teacher</span>
 			</RouterLink>
