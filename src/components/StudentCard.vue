@@ -15,10 +15,10 @@ const props = defineProps({
         <div class="card-wrapper">
           <div class="card-body">
             <h2>
-              {{ student?.name }} {{ student?.surname }} <span>({{ student?.courselist }})</span>
+              {{ student?.name }} {{ student?.surname }} <span>({{ student?.studentid }})</span>
             </h2>
-            <p class="card-email">{{ student?.teacherID }}</p>
-            <p>{{ student?.comment}}</p>
+            <p class="card-email">{{ student?.courselist }}</p>
+            <p>{{ student?.comment}} {{ student?.teacherID }}</p>
           </div>
         </div>
       </article>
