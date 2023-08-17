@@ -11,7 +11,6 @@ const props = defineProps({
 </script>
 
 <template>
-  hello
       <article>
         <div class="card-wrapper">
           <div class="card-body">

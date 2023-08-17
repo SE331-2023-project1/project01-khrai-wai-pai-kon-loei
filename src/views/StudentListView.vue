@@ -3,6 +3,7 @@ import type { Student } from '@/type'
 import { ref, watchEffect } from 'vue'
 import type { Ref } from 'vue'
 import StudentService from '@/services/StudentService'
+import  StudentCard  from "../components/StudentCard.vue";
 
 
 const students: Ref<Array<Student>> = ref([])
@@ -19,7 +20,7 @@ const props = defineProps({
 })
 
 watchEffect(() => {
-  StudentService.getStudents(10, 1).then((response) => {
+  StudentService.getStudents(20, 1).then((response) => {
     console.log(response)
     students.value = response.data
   })
@@ -29,7 +30,7 @@ watchEffect(() => {
 
 
 <template>
-  {{students}}
+  <!-- {{students}} -->
   <main class="container">
     <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
   </main>
