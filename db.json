@@ -267,17 +267,20 @@
     {
       "name": "Danaikrit",
       "surname": "Jaiwong",
-      "studentId": "642115016"
+      "studentId": "642115016",
+      "profileimage": "img"
     },
     {
       "name": "Pattanachai",
       "surname": "Nuyamang",
-      "studentId": "642115027"
+      "studentId": "642115027",
+      "profileimage": "img"
     },
     {
       "name": "Pharanya",
       "surname": "Liwiriyasakul",
-      "studentId": "642115035"
+      "studentId": "642115035",
+      "profileimage": "img"
     }
   ]
   
