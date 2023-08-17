@@ -38,7 +38,7 @@ const props = defineProps({
   border: 1px solid #39495c;
   /* margin-bottom: 18px; */
   border-radius: 8px;
-  background-color: rgb(222, 137, 191);
+  background-color: rgb(251, 221, 239);
 }
 
 .card-wrapper:hover {
