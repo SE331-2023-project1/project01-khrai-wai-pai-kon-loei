@@ -20,6 +20,6 @@ export interface Teacher {
 export interface Contributor {
   name: String,
   surname: String,
-  studentid: String,
+  studentId: String,
   profileimage: String,
 }

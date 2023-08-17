@@ -20,7 +20,7 @@ const props = defineProps({
         />
         <h2>
           {{ contributor?.name }} {{ contributor?.surname }}
-          <span>({{ contributor?.studentid }})</span>
+          <span>({{ contributor?.studentId }})</span>
         </h2>
       </div>
     </div>
