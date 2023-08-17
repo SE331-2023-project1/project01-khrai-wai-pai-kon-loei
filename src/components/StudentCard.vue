@@ -1,27 +1,32 @@
 <script setup lang="ts">
-import type { Student } from '@/type'
-import type { PropType } from 'vue'
+import type { Student } from "@/type";
+import type { PropType } from "vue";
 
 const props = defineProps({
   student: {
     type: Object as PropType<Student>,
-    require: true
-  }
-})
+    require: true,
+  },
+});
 </script>
 
 <template>
-      <article>
-        <div class="card-wrapper">
-          <div class="card-body">
-            <h2>
-              {{ student?.name }} {{ student?.surname }} <span>({{ student?.studentid }})</span>
-            </h2>
-            <p class="card-email">{{ student?.courselist }}</p>
-            <p>{{ student?.comment}} {{ student?.teacherID }}</p>
-          </div>
-        </div>
-      </article>
+  <article>
+    <div class="card-wrapper">
+      <div class="card-body">
+        <img
+          class="w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
+          :src="student?.profileimage"
+        />
+        <h2>
+          {{ student?.name }} {{ student?.surname }}
+          <span>({{ student?.studentid }})</span>
+        </h2>
+        <p class="card-email">{{ student?.courselist }}</p>
+        <p>{{ student?.comment }} {{ student?.teacherID }}</p>
+      </div>
+    </div>
+  </article>
 </template>
 
 <style scoped>
@@ -50,7 +55,7 @@ const props = defineProps({
   font-weight: bold;
 }
 
-.card-body h2>span {
+.card-body h2 > span {
   font-size: 16px;
   color: #818181;
 }

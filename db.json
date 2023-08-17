@@ -4,7 +4,7 @@
       "name": "Emily",
       "surname": "Johnson",
       "studentid": "EJ2023",
-      "profileimage": "image_link_1",
+      "profileimage": "https://tinyurl.com/3fzfjvzx",
       "courselist": ["Computer Science", "Mathematics"],
       "teacherID": "T101",
       "comment": "Emily is a dedicated student with a strong passion for coding."
