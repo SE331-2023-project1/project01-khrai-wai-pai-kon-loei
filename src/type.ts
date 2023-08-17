@@ -16,3 +16,10 @@ export interface Teacher {
   comment: String,
   courselist: String[]
 }
+
+export interface Contributor {
+  name: String,
+  surname: String,
+  studentid: String,
+  profileimage: String,
+}

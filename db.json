@@ -262,5 +262,23 @@
         "comment": "Organized and structured lessons",
         "courselist": ["SCI103"]
       }
+  ],
+  "contributors": [
+    {
+      "name": "Danaikrit",
+      "surname": "Jaiwong",
+      "studentId": "642115016"
+    },
+    {
+      "name": "Pattanachai",
+      "surname": "Nuyamang",
+      "studentId": "642115027"
+    },
+    {
+      "name": "Pharanya",
+      "surname": "Liwiriyasakul",
+      "studentId": "642115035"
+    }
   ]
+  
 }

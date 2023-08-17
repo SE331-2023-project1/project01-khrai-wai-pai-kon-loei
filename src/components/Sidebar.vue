@@ -14,7 +14,7 @@
 
 		<h3>Menu</h3>
 		<div class="menu">
-			<RouterLink to="/" class="button">
+			<RouterLink :to="{name: 'home' }" class="button">
 				<span class="material-symbols-outlined">home</span>
 				<span class="text">Home</span>
 			</RouterLink>
