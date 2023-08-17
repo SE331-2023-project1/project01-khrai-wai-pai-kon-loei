@@ -186,7 +186,7 @@
         "name": "John",
         "surname": "Smith",
         "teacherID": "AJ1234",
-        "profileimage": "url_to_image1",
+        "profileimage": "https://tinyurl.com/2rfc47ey",
         "comment": "Excellent instructor",
         "courselist": ["MATH101", "HIST102"]
       },
@@ -194,7 +194,7 @@
         "name": "Sarah",
         "surname": "Johnson",
         "teacherID": "SL5678",
-        "profileimage": "url_to_image2",
+        "profileimage": "https://tinyurl.com/ehu7mv54",
         "comment": "Very knowledgeable",
         "courselist": ["MATH101", "SCI103"]
       },
@@ -202,7 +202,7 @@
         "name": "Michael",
         "surname": "Williams",
         "teacherID": "BR7890",
-        "profileimage": "url_to_image3",
+        "profileimage": "https://tinyurl.com/7tta6ehv",
         "comment": "Engaging teaching style",
         "courselist": ["HIST102", "SCI103"]
       },
@@ -210,7 +210,7 @@
         "name": "Emily",
         "surname": "Brown",
         "teacherID": "EC4321",
-        "profileimage": "url_to_image4",
+        "profileimage": "https://tinyurl.com/5n7vpjpe",
         "comment": "Clear explanations",
         "courselist": ["MATH101"]
       },
@@ -218,7 +218,7 @@
         "name": "Daniel",
         "surname": "Jones",
         "teacherID": "DJ8765",
-        "profileimage": "url_to_image5",
+        "profileimage": "https://tinyurl.com/mtrnwu3m",
         "comment": "Passionate about the subject",
         "courselist": ["SCI103"]
       },
@@ -226,7 +226,7 @@
         "name": "Olivia",
         "surname": "Davis",
         "teacherID": "OD5678",
-        "profileimage": "url_to_image6",
+        "profileimage": "https://tinyurl.com/bdae3j78",
         "comment": "Patient and helpful",
         "courselist": ["MATH101", "HIST102", "SCI103"]
       },
@@ -234,7 +234,7 @@
         "name": "James",
         "surname": "Miller",
         "teacherID": "JM2345",
-        "profileimage": "url_to_image7",
+        "profileimage": "https://tinyurl.com/2wtw9st6",
         "comment": "Encourages critical thinking",
         "courselist": ["HIST102"]
       },
@@ -242,7 +242,7 @@
         "name": "Ava",
         "surname": "Wilson",
         "teacherID": "AW9012",
-        "profileimage": "url_to_image8",
+        "profileimage": "https://tinyurl.com/4jct2kkk",
         "comment": "Interactive class sessions",
         "courselist": ["MATH101", "SCI103"]
       },
@@ -250,7 +250,7 @@
         "name": "William",
         "surname": "Moore",
         "teacherID": "WM3456",
-        "profileimage": "url_to_image9",
+        "profileimage": "https://tinyurl.com/ysfsmdfc",
         "comment": "Makes complex topics easy to understand",
         "courselist": ["MATH101", "HIST102"]
       },
@@ -258,7 +258,7 @@
         "name": "Sophia",
         "surname": "Taylor",
         "teacherID": "ST7890",
-        "profileimage": "url_to_image10",
+        "profileimage": "https://tinyurl.com/yckvnp8y",
         "comment": "Organized and structured lessons",
         "courselist": ["SCI103"]
       }
