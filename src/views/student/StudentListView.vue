@@ -1,37 +1,74 @@
 <script setup lang="ts">
-import type { Student } from '@/type'
-import { ref, watchEffect } from 'vue'
-import type { Ref } from 'vue'
-import StudentService from '@/services/StudentService'
 import  StudentCard  from "../../components/StudentCard.vue";
-
+import type { Student } from '@/type'
+import StudentService from '@/services/StudentService'
+import type { AxiosResponse } from 'axios';
+import { ref, type Ref, watchEffect, computed } from 'vue'
 
 const students: Ref<Array<Student>> = ref([])
+  const totalStudent = ref<number>(10)
 const props = defineProps({
   page: {
     type: Number,
     required: true
   }
 })
+const pageSize = ref(6) //Defualt page size
 
-watchEffect(() => {
-  StudentService.getStudents(20, 1).then((response) => {
-    console.log(response)
+watchEffect (() => {
+  StudentService.getStudents(pageSize.value, props.page)
+  .then((response: AxiosResponse<Student[]>) => {
     students.value = response.data
+    totalStudent.value = response.headers['x-total-count']
   })
 })
 
+const hasNextPage = computed(() => {
+  const totalPages = Math.ceil(totalStudent.value / pageSize.value)
+  return props.page.valueOf() < totalPages
+})
 </script>
 
-
 <template>
-  <!-- {{students}} -->
-  <main class="container">
+  
+  <main class="events">
+    <div class="container">
     <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
+  </div>
+  
+    
+    
   </main>
 </template>
 
 <style scoped>
+.flex {
+    @apply flex-1;
+    
+  }
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pagination {
+  display: flex;
+  width: 290px;
+}
+.pagination a {
+  flex: 1;
+  text-decoration: none;
+  color: #2c3e50;
+}
+.pageSize{
+  padding: 0 0 20px 0;
+}
+#page-prev {
+  text-align: left;
+}
+#page-next {
+  text-align: right;
+}
 .container {
   margin-top: 3rem;
   display: grid;
