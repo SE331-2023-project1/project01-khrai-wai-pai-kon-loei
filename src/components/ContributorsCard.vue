@@ -41,6 +41,7 @@ const props = defineProps({
   background-color: rgb(251, 221, 239);
 }
 
+/*pic response when mouse hover*/
 .card-wrapper .pic {
   border-radius: 50%;
   transform: scale(1);

@@ -15,7 +15,7 @@ const props = defineProps({
     <div class="card-wrapper">
       <div class="card-body">
         <img
-          class="w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
+          class="pic w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
           :src="teacher?.profileimage"
         />
         <h2>
@@ -40,9 +40,21 @@ const props = defineProps({
   background-color: rgb(251, 221, 239);
 }
 
+/*pic response when mouse hover*/
+.card-wrapper .pic {
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.7s ease 0s;
+}
+.card-wrapper:hover .pic {
+  box-shadow: 0 0 0 8px #c2496b;
+  transform: scale(0.8);
+}
+
 .card-wrapper:hover {
   transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 12px 0 #80354a;
+  /* box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .student-link {
