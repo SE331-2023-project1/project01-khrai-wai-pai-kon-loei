@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { Student } from '@/type'
+import type { Teacher } from '@/type'
 import { ref, watchEffect } from 'vue'
 import type { Ref } from 'vue'
-import StudentService from '@/services/StudentService'
-import  StudentCard  from "../components/StudentCard.vue";
+import TeacherService from '@/services/TeacherService'
+import  TeacherCard  from "../components/TeacherCard.vue";
 
 
-const students: Ref<Array<Student>> = ref([])
+const teachers: Ref<Array<Teacher>> = ref([])
 
 const props = defineProps({
   page: {
@@ -20,9 +20,9 @@ const props = defineProps({
 })
 
 watchEffect(() => {
-  StudentService.getStudents(20, 1).then((response) => {
+  TeacherService.getTeachers(20, 1).then((response) => {
     console.log(response)
-    students.value = response.data
+    teachers.value = response.data
   })
 })
 
@@ -32,7 +32,7 @@ watchEffect(() => {
 <template>
   <!-- {{students}} -->
   <main class="container">
-    <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
+    <TeacherCard v-for="teacher in teachers" :key="teacher.teacherID" :teacher="teacher"></TeacherCard>
   </main>
 </template>
 
