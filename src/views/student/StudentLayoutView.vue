@@ -31,6 +31,10 @@ function submitComment() {
     newComment.value = ""; // Clear the input after submitting
   }
 }
+
+function deleteComment(index: number) {
+  comments.value.splice(index, 1);
+}
 </script>
 
 <template>
@@ -55,6 +59,9 @@ function submitComment() {
             class="bg-gray-100 p-2 rounded-lg"
           >
             {{ comment }}
+            <button @click="deleteComment(index)" class="ml-2 text-red-500">
+              Delete
+            </button>
           </div>
         </div>
 
