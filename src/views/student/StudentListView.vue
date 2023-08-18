@@ -12,10 +12,6 @@ const props = defineProps({
     type: Number,
     required: true
   }
-  // limit:{
-  //   type: Number,
-  //   required: true
-  // }
 })
 
 watchEffect(() => {

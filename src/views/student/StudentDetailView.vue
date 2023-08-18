@@ -10,9 +10,8 @@ defineProps({
 })
 </script>
 <template>
+    {{ student }}
     <div v-if="student">
-    <p>{{ student.name }}  {{ student.surname }}</p>
-    <p>{{ student.comment }}</p>
 </div>
 
 </template>

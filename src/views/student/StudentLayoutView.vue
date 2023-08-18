@@ -12,7 +12,8 @@ const props = defineProps({
     studentid: String
 })
     StudentService.getStudentById(String(props.studentid)).then((response) => {
-    students.value = response.data
+        students.value = response.data[0]
+        console.log(students.value)
     }).catch(error => {
         console.log(error)
     })
@@ -22,18 +23,19 @@ const props = defineProps({
 
 <template>
     <main class="container">
-        <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
-
+        <!-- <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard> -->
         <div v-if="students">
         <img
           class="w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
           :src="students?.profileimage"
         />
-       <h2>{{ students.name }} {{ students.surname }}</h2>
-    <div id="nav">
-            <RouterLink :to="{ name: 'student-detail', params: { studentid} }">Details</RouterLink>
-            <RouterLink :to="{ name: 'student-edit', params: { studentid} }">Edit</RouterLink>
-       </div>
+       <h1>Name: {{ students.name }} {{ students.surname }}</h1>
+       <h1>Studentid: {{students.studentid}}</h1>
+       <p>Courselist: {{students.courselist}}</p>
+       <p>Comment:</p>
+       <p>{{ students.comment }}</p>
+
+       <RouterView :student="student"></RouterView>
     </div>
     
     </main>

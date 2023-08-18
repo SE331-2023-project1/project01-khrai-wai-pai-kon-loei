@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import  Student  from '../views/student/StudentListView.vue'
 import StudentDetailView from '@/views/student/StudentDetailView.vue'
-import StudentEditView from '@/views/student/StudentEditView.vue'
 import StudentLayoutView from '@/views/student/StudentLayoutView.vue'
 import  Teacher  from '../views/TeacherListView.vue'
 import Continutors from '../views/ContrinutorsListView.vue'
@@ -39,12 +38,7 @@ const router = createRouter({
           component: StudentDetailView,
           props: true
       },
-        {
-          path: 'edit',
-          name: 'student-edit',
-          props: true,
-          component: StudentEditView
-        }
+        
       ]
     }
   ]
