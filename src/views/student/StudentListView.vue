@@ -30,24 +30,29 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  
   <main class="events">
     <div class="container">
-    <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
-  </div>
-  <div class="flex"></div>
-    <div class="pagination">
-      <RouterLink :to="{ name: 'students', query: {page: page - 1}}" 
-    rel="prev" v-if="page != 1" id="page-prev">
-    Prev Page
-    </RouterLink>  
-    <RouterLink :to="{ name: 'students', query: {page: page + 1}}" 
-    rel="next" v-if="hasNextPage" id="page-next">
-    Next Page
-    </RouterLink>
+      <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
     </div>
-    
-    
+    <div class="flex"></div>
+    <div class="pagination flex justify-between items-center mt-8">
+      <RouterLink
+        :to="{ name: 'students', query: { page: page - 1 } }"
+        rel="prev"
+        v-if="page != 1"
+        class="btn btn-blue"
+      >
+        Prev Page
+      </RouterLink>
+      <RouterLink
+        :to="{ name: 'students', query: { page: page + 1 } }"
+        rel="next"
+        v-if="hasNextPage"
+        class="btn btn-blue"
+      >
+        Next Page
+      </RouterLink>
+    </div>
   </main>
 </template>
 
@@ -85,6 +90,26 @@ const hasNextPage = computed(() => {
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
   row-gap: 3rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-blue {
+  background-color: rgb(251, 221, 239);
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #9370DB;
 }
 
 @media (max-width: 1149px) {
