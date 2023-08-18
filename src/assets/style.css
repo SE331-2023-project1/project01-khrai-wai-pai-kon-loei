@@ -118,6 +118,6 @@ aside .logo img {
   }
   @media (max-width: 1024px) {
     aside {
-      @apply absolute z-[99];
+      @apply fixed z-[99];
     }
   }
