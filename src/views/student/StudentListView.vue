@@ -35,7 +35,17 @@ const hasNextPage = computed(() => {
     <div class="container">
     <StudentCard v-for="student in students" :key="student.studentid" :student="student"></StudentCard>
   </div>
-  
+  <div class="flex"></div>
+    <div class="pagination">
+      <RouterLink :to="{ name: 'students', query: {page: page - 1}}" 
+    rel="prev" v-if="page != 1" id="page-prev">
+    Prev Page
+    </RouterLink>  
+    <RouterLink :to="{ name: 'students', query: {page: page + 1}}" 
+    rel="next" v-if="hasNextPage" id="page-next">
+    Next Page
+    </RouterLink>
+    </div>
     
     
   </main>
