@@ -21,6 +21,16 @@ StudentService.getStudentById(String(props.studentid))
   .catch((error) => {
     console.log(error);
   });
+
+const newComment = ref("");
+const comments = ref([]);
+
+function submitComment() {
+  if (newComment.value.trim() !== "") {
+    comments.value.push(newComment.value);
+    newComment.value = ""; // Clear the input after submitting
+  }
+}
 </script>
 
 <template>
@@ -37,21 +47,33 @@ StudentService.getStudentById(String(props.studentid))
       <p>Comment:</p>
       <p>{{ students.comment }}</p>
 
-      <div class="comment-box p-4 bg-white shadow-md rounded-lg">
-        <textarea
-          v-model="comment"
-          placeholder="Write a comment"
-          class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"
-        ></textarea>
-        <button
-          @click="submitComment"
-          class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 ease-in-out"
-        >
-          Submit
-        </button>
-      </div>
+      <div>
+        <div class="mt-4">
+          <div
+            v-for="(comment, index) in comments"
+            :key="index"
+            class="bg-gray-100 p-2 rounded-lg"
+          >
+            {{ comment }}
+          </div>
+        </div>
 
-      <RouterView :student="student"></RouterView>
+        <div class="comment-box p-4 bg-white shadow-md rounded-lg">
+          <textarea
+            v-model="newComment"
+            placeholder="Write a comment"
+            class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"
+          ></textarea>
+          <button
+            @click="submitComment"
+            class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 ease-in-out"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
     </div>
+
+    <RouterView :student="student"></RouterView>
   </main>
 </template>
