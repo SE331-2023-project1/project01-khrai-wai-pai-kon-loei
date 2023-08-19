@@ -94,6 +94,7 @@ const hasNextPage = computed(() => {
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
+  margin: 1rem;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
