@@ -67,6 +67,25 @@ function deleteComment(index: number) {
           </div>
         </div>
 
+            <!-- Teacher information -->
+            
+      <div class="bg-white p-6 rounded-lg shadow-md space-y-4 ">
+        <h1 class=" text-xl ">Teacher :</h1>
+        <div class="flex items-center space-x-4">
+          <img
+            class="w-24 h-24 object-cover rounded-full shadow-lg"
+            :src="teacher.profileimage"
+          />
+          <div>
+            <h1 class="text-2xl font-semibold">
+              {{ teacher.name }} {{ teacher.surname }}
+            </h1>
+            <h1 class="text-lg">{{ teacher.courselist }}</h1>
+            <h1 class="text-lg">{{ teacher.teacherID }}</h1>
+          </div>
+        </div>
+    </div>
+
         <!-- Comments section -->
         <div class="border-t border-gray-300 pt-4">
           <h2 class="text-lg font-semibold">Comment</h2>
@@ -102,23 +121,6 @@ function deleteComment(index: number) {
       </div>
     </div>
 
-    <!-- Teacher information -->
-    <div v-if="teacher">
-      <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
-        <div class="flex items-center space-x-4">
-          <img
-            class="w-24 h-24 object-cover rounded-full shadow-lg"
-            :src="teacher.profileimage"
-          />
-          <div>
-            <h1 class="text-2xl font-semibold">
-              {{ teacher.name }} {{ teacher.surname }}
-            </h1>
-            <h1 class="text-lg">{{ teacher.courselist }}</h1>
-            <h1 class="text-lg">{{ teacher.teacherID }}</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </main>
 </template>
