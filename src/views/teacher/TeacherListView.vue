@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import  TeacherCard  from "../components/TeacherCard.vue";
+import  TeacherCard  from "../../components/TeacherCard.vue";
 import type { Teacher } from '@/type'
 import TeacherService from '@/services/TeacherService'
 import type { AxiosResponse } from 'axios';

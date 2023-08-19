@@ -13,7 +13,7 @@ const props = defineProps({
 
 <template>
   <article>
-    <RouterLink :to="{name: 'student-detail', params:{studentid: student?.studentid}}">
+    <RouterLink :to="{name: 'student-detail', params:{studentid: student?.studentid}}">    
     <div class="card-wrapper">
       <div class="card-body">
         <img

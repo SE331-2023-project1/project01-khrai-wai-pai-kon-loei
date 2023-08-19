@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Teacher } from "@/type";
+import  { Teacher } from "@/type";
 import type { PropType } from "vue";
 
 const props = defineProps({
@@ -12,6 +12,7 @@ const props = defineProps({
 
 <template>
   <article>
+    <RouterLink :to="{name: 'teacher-detail', params:{teacherID: teacher?.teacherID}}">
     <div class="card-wrapper">
       <div class="card-body">
         <img
@@ -26,6 +27,7 @@ const props = defineProps({
         <p>{{ teacher?.comment }} {{ teacher?.teacherID }}</p>
       </div>
     </div>
+    </RouterLink>
   </article>
 </template>
 
