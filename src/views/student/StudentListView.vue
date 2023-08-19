@@ -27,7 +27,7 @@ const pageSize = ref(6); //Defualt page size
 //   })
 // })
 
-StudentService.getStudents(props.limit, props.page)
+StudentService.getStudents(6, props.page)
   .then((response: AxiosResponse<Student[]>) => {
     students.value = response.data;
     totalStudent.value = response.headers["x-total-count"];
@@ -39,7 +39,7 @@ StudentService.getStudents(props.limit, props.page)
 onBeforeRouteUpdate((to, from, next) => {
   const toPage = Number(to.query.page);
 
-  StudentService.getStudents(2, toPage)
+  StudentService.getStudents(6, toPage)
     .then((response: AxiosResponse<Student[]>) => {
       students.value = response.data;
       totalStudent.value = response.headers["x-total-count"];
@@ -117,6 +117,10 @@ const hasNextPage = computed(() => {
 </template>
 
 <style scoped>
+
+#nprogress .bar {
+background: rgb(34, 221, 90) !important;
+}
 .flex {
   @apply flex-1;
 }
