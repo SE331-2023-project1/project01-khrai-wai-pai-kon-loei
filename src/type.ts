@@ -5,7 +5,7 @@ export interface Student {
   profileimage: String,
   courselist: String[],
   teacherID: String,
-  comment: String
+  comment: []
 }
 
 export interface Teacher {
@@ -13,7 +13,6 @@ export interface Teacher {
   surname: String,
   teacherID: String,
   profileimage: String,
-  comment: String,
   courselist: String[]
 }
 

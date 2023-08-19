@@ -24,7 +24,7 @@ const props = defineProps({
           <span>({{ teacher?.teacherID }})</span>
         </h2>
         <p class="card-email">{{ teacher?.courselist }}</p>
-        <p>{{ teacher?.comment }} {{ teacher?.teacherID }}</p>
+        <p>{{ teacher?.teacherID }}</p>
       </div>
     </div>
     </RouterLink>

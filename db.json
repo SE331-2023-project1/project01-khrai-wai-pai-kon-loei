@@ -7,7 +7,7 @@
       "profileimage": "https://tinyurl.com/3fzfjvzx",
       "courselist": ["Computer Science", "Mathematics"],
       "teacherID": "AJ1234",
-      "comment": "Emily is a dedicated student with a strong passion for coding."
+      "comment":[]
     },
     {
       "name": "Daniel",
@@ -16,7 +16,7 @@
       "profileimage": "https://tinyurl.com/yzj4jmzk",
       "courselist": ["Mechanical Engineering", "Physics"],
       "teacherID": "AJ1234",
-      "comment": "Daniel has a knack for solving complex engineering problems."
+      "comment":[]
     },
     {
       "name": "Sophia",
@@ -25,7 +25,7 @@
       "profileimage": "https://tinyurl.com/ymy6n2kb",
       "courselist": ["Business Administration", "Economics"],
       "teacherID": "SL5678",
-      "comment": "Sophia is a natural leader who excels in teamwork and organization."
+      "comment":[]
     },
     {
       "name": "Liam",
@@ -34,7 +34,7 @@
       "profileimage": "https://tinyurl.com/2bhuruxf",
       "courselist": ["Biology", "Chemistry"],
       "teacherID": "SL5678",
-      "comment": "Liam's curiosity about the natural world drives his studies in biology."
+      "comment":[]
     },
     {
       "name": "Olivia",
@@ -43,7 +43,7 @@
       "profileimage": "https://tinyurl.com/bdz5jzu7",
       "courselist": ["Psychology", "Sociology"],
       "teacherID": "BR7890",
-      "comment": "Olivia has a deep understanding of human behavior and a compassionate nature."
+      "comment":[]
     },
     {
       "name": "Ethan",
@@ -52,7 +52,7 @@
       "profileimage": "https://tinyurl.com/2p8a59ny",
       "courselist": ["Economics", "Statistics"],
       "teacherID": "BR7890",
-      "comment": "Ethan's analytical skills shine in his economics studies."
+      "comment":[]
     },
     {
       "name": "Ava",
@@ -61,7 +61,7 @@
       "profileimage": "https://tinyurl.com/mvux33jw",
       "courselist": ["Fine Arts", "Graphic Design"],
       "teacherID": "EC4321",
-      "comment": "Ava's artistic talents are evident in her captivating creations."
+      "comment":[]
     },
     {
       "name": "Jackson",
@@ -70,7 +70,7 @@
       "profileimage": "https://tinyurl.com/mv4zvh8a",
       "courselist": ["Political Science", "History"],
       "teacherID": "EC4321",
-      "comment": "Jackson is deeply interested in global affairs and political ideologies."
+      "comment":[]
     },
     {
       "name": "Mia",
@@ -79,7 +79,7 @@
       "profileimage": "https://tinyurl.com/3xxra7xh",
       "courselist": ["Journalism", "Communication"],
       "teacherID": "DJ8765",
-      "comment": "Mia has a passion for storytelling and investigative journalism."
+      "comment":[]
     },
     {
       "name": "Aiden",
@@ -88,7 +88,7 @@
       "profileimage": "https://tinyurl.com/3ustxvza",
       "courselist": ["Environmental Science", "Geology"],
       "teacherID": "DJ8765",
-      "comment": "Aiden's love for nature drives his studies in environmental science."
+      "comment":[]
     },
     {
       "name": "Isabella",
@@ -97,7 +97,7 @@
       "profileimage": "https://tinyurl.com/4nf7te5n",
       "courselist": ["Literature", "Creative Writing"],
       "teacherID": "OD5678",
-      "comment": "Isabella's profound appreciation for literature is evident in her insightful interpretations."
+      "comment":[]
     },
     {
       "name": "Lucas",
@@ -106,7 +106,7 @@
       "profileimage": "https://tinyurl.com/5xz6yfyy",
       "courselist": ["Physics", "Astrophysics"],
       "teacherID": "OD5678",
-      "comment": "Lucas is a budding physicist with a fascination for the fundamental laws of the universe."
+      "comment":[]
     },
     {
       "name": "Mia",
@@ -115,7 +115,7 @@
       "profileimage": "https://tinyurl.com/4jk8pa6r",
       "courselist": ["Medicine", "Genetics"],
       "teacherID": "JM2345",
-      "comment": "Mia's dream of becoming a doctor is fueled by her compassion for others."
+      "comment":[]
     },
     {
       "name": "William",
@@ -124,7 +124,7 @@
       "profileimage": "https://tinyurl.com/bnxm4zcf",
       "courselist": ["Architecture", "Urban Planning"],
       "teacherID": "JM2345",
-      "comment": "William's architectural designs blend creativity and functionality."
+      "comment":[]
     },
     {
       "name": "Harper",
@@ -133,7 +133,7 @@
       "profileimage": "https://tinyurl.com/yt7t5z3r",
       "courselist": ["History", "Archaeology"],
       "teacherID": "AW9012",
-      "comment": "Harper's fascination with the past drives her studies in history."
+      "comment":[]
     },
     {
       "name": "Benjamin",
@@ -142,7 +142,7 @@
       "profileimage": "https://tinyurl.com/bddffmrt",
       "courselist": ["Mathematics", "Data Science"],
       "teacherID": "AW9012",
-      "comment": "Benjamin's mathematical prowess is evident in his ability to tackle complex problems."
+      "comment":[]
     },
     {
       "name": "Evelyn",
@@ -151,7 +151,7 @@
       "profileimage": "https://tinyurl.com/3k5fuapz",
       "courselist": ["Music", "Composition"],
       "teacherID": "WM3456",
-      "comment": "Evelyn's melodious talents shine through her musical performances."
+      "comment":[]
     },
     {
       "name": "Samuel",
@@ -160,7 +160,7 @@
       "profileimage": "https://tinyurl.com/yfs9ps4z",
       "courselist": ["Sociology", "Anthropology"],
       "teacherID": "WM3456",
-      "comment": "Samuel's keen interest in societal dynamics drives his studies in sociology."
+      "comment":[]
     },
     {
       "name": "Victoria",
@@ -169,7 +169,7 @@
       "profileimage": "https://tinyurl.com/4kf7hhm7",
       "courselist": ["Linguistics", "Language Acquisition"],
       "teacherID": "ST7890",
-      "comment": "Victoria's fascination with languages and communication is evident."
+      "comment":[]
     },
     {
       "name": "Henry",
@@ -178,7 +178,7 @@
       "profileimage": "https://tinyurl.com/bdfpntu3",
       "courselist": ["Film Studies", "Cinematography"],
       "teacherID": "ST7890",
-      "comment": "Henry's passion for cinema is reflected in his insightful analyses of film."
+      "comment":[]
     }
   ],
     "teachers": [
@@ -187,7 +187,6 @@
         "surname": "Smith",
         "teacherID": "AJ1234",
         "profileimage": "https://tinyurl.com/2rfc47ey",
-        "comment": "Excellent instructor",
         "courselist": ["MATH101", "HIST102"]
       },
       {
@@ -195,7 +194,6 @@
         "surname": "Johnson",
         "teacherID": "SL5678",
         "profileimage": "https://tinyurl.com/ehu7mv54",
-        "comment": "Very knowledgeable",
         "courselist": ["MATH101", "SCI103"]
       },
       {
@@ -203,7 +201,6 @@
         "surname": "Williams",
         "teacherID": "BR7890",
         "profileimage": "https://tinyurl.com/7tta6ehv",
-        "comment": "Engaging teaching style",
         "courselist": ["HIST102", "SCI103"]
       },
       {
@@ -211,7 +208,6 @@
         "surname": "Brown",
         "teacherID": "EC4321",
         "profileimage": "https://tinyurl.com/5n7vpjpe",
-        "comment": "Clear explanations",
         "courselist": ["MATH101"]
       },
       {
@@ -219,7 +215,6 @@
         "surname": "Jones",
         "teacherID": "DJ8765",
         "profileimage": "https://tinyurl.com/mtrnwu3m",
-        "comment": "Passionate about the subject",
         "courselist": ["SCI103"]
       },
       {
@@ -227,7 +222,6 @@
         "surname": "Davis",
         "teacherID": "OD5678",
         "profileimage": "https://tinyurl.com/bdae3j78",
-        "comment": "Patient and helpful",
         "courselist": ["MATH101", "HIST102", "SCI103"]
       },
       {
@@ -235,7 +229,6 @@
         "surname": "Miller",
         "teacherID": "JM2345",
         "profileimage": "https://tinyurl.com/2wtw9st6",
-        "comment": "Encourages critical thinking",
         "courselist": ["HIST102"]
       },
       {
@@ -243,7 +236,6 @@
         "surname": "Wilson",
         "teacherID": "AW9012",
         "profileimage": "https://tinyurl.com/4jct2kkk",
-        "comment": "Interactive class sessions",
         "courselist": ["MATH101", "SCI103"]
       },
       {
@@ -251,7 +243,6 @@
         "surname": "Moore",
         "teacherID": "WM3456",
         "profileimage": "https://tinyurl.com/ysfsmdfc",
-        "comment": "Makes complex topics easy to understand",
         "courselist": ["MATH101", "HIST102"]
       },
       {
@@ -259,7 +250,6 @@
         "surname": "Taylor",
         "teacherID": "ST7890",
         "profileimage": "https://tinyurl.com/yckvnp8y",
-        "comment": "Organized and structured lessons",
         "courselist": ["SCI103"]
       }
   ],
