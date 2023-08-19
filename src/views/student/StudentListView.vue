@@ -40,17 +40,38 @@ const hasNextPage = computed(() => {
         :to="{ name: 'students', query: { page: page - 1 } }"
         rel="prev"
         v-if="page != 1"
-        class="btn btn-blue"
-      >
+        class="btn btn-blue group relative overflow-hidden">
+        <!-- make button responsive -->
+        <span class="absolute -start-full transition-all group-hover:start-4">
+          <svg class="h-5 w-5 rtl:rotate-180"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+          <path stroke-width="2"
+            d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+        </span>
+        <span class="text-sm font-bold transition-all group-hover:ms-8">
         Prev Page
+        </span>
       </RouterLink>
+
       <RouterLink
         :to="{ name: 'students', query: { page: page + 1 } }"
         rel="next"
         v-if="hasNextPage"
-        class="btn btn-blue"
-      >
-        Next Page
+        class="btn btn-blue group relative overflow-hidden">
+        <!-- make button responsive -->
+        <span class="absolute -end-full transition-all group-hover:end-4">
+          <svg class="h-5 w-5 rtl:rotate-180"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+          <path stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+        <span class="text-sm font-bold transition-all group-hover:me-8">
+          Next Page
+        </span>
       </RouterLink>
     </div>
   </main>
@@ -68,7 +89,8 @@ const hasNextPage = computed(() => {
 }
 .pagination {
   display: flex;
-  width: 290px;
+  width: 340px;
+  align-items: baseline;
 }
 .pagination a {
   flex: 1;
@@ -95,8 +117,6 @@ const hasNextPage = computed(() => {
   display: inline-block;
   padding: 0.5rem 1rem;
   margin: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
   text-align: center;
   border: none;
   border-radius: 0.25rem;
