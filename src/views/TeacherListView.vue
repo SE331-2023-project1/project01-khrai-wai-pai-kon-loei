@@ -37,11 +37,11 @@ const hasNextPage = computed(() => {
   </div>
   <div class="flex"></div>
     <div class="pagination">
-      <RouterLink :to="{ name: 'students', query: {page: page - 1}}" 
+      <RouterLink :to="{ name: 'teachers', query: {page: page - 1}}" 
     rel="prev" v-if="page != 1" id="page-prev">
     Prev Page
     </RouterLink>  
-    <RouterLink :to="{ name: 'students', query: {page: page + 1}}" 
+    <RouterLink :to="{ name: 'teachers', query: {page: page + 1}}" 
     rel="next" v-if="hasNextPage" id="page-next">
     Next Page
     </RouterLink>
