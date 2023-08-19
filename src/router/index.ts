@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import  Student  from '../views/student/StudentListView.vue'
 import StudentDetailView from '@/views/student/StudentDetailView.vue'
 import StudentLayoutView from '@/views/student/StudentLayoutView.vue'
-import  Teacher  from '../views/TeacherListView.vue'
+import  Teacher  from '../views/teacher/TeacherListView.vue'
+import TeacherDetailView from '@/views/teacher/TeacherDetailView.vue'
+import TeacherLayoutView from '@/views/teacher/TeacherLayoutView.vue'
 import Continutors from '../views/ContrinutorsListView.vue'
 
 
@@ -38,6 +40,22 @@ const router = createRouter({
           path: '',
           name: 'student-detail',
           component: StudentDetailView,
+          props: true
+      },
+        
+      ]
+    },
+    {
+      path: '/teacher/:teacherID',
+      name: 'teacher-layout',
+      component: TeacherLayoutView,
+      props: true,
+
+      children: [
+        { 
+          path: '',
+          name: 'teacher-detail',
+          component: TeacherDetailView,
           props: true
       },
         
