@@ -36,7 +36,8 @@ const hasNextPage = computed(() => {
     </div>
     <div class="flex"></div>
     <div class="pagination flex justify-between items-center mt-8">
-      <RouterLink
+      <div>
+       <RouterLink
         :to="{ name: 'students', query: { page: page - 1 } }"
         rel="prev"
         v-if="page != 1"
@@ -53,9 +54,11 @@ const hasNextPage = computed(() => {
         <span class="text-sm font-bold transition-all group-hover:ms-8">
         Prev Page
         </span>
-      </RouterLink>
+       </RouterLink>
+      </div>
 
-      <RouterLink
+      <div>
+       <RouterLink
         :to="{ name: 'students', query: { page: page + 1 } }"
         rel="next"
         v-if="hasNextPage"
@@ -72,7 +75,8 @@ const hasNextPage = computed(() => {
         <span class="text-sm font-bold transition-all group-hover:me-8">
           Next Page
         </span>
-      </RouterLink>
+       </RouterLink>
+      </div>
     </div>
   </main>
 </template>

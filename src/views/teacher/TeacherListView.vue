@@ -37,13 +37,26 @@ const hasNextPage = computed(() => {
   </div>
   <div class="flex"></div>
     <div class="pagination flex justify-between items-center mt-8">
+     <div>
       <RouterLink 
         :to="{ name: 'teachers', query: {page: page - 1}}" 
         rel="prev" 
         v-if="page != 1" 
-        class="btn btn-blue">
+        class="btn btn-blue group relative overflow-hidden">
+        <!-- make button responsive -->
+        <span class="absolute -start-full transition-all group-hover:start-4">
+          <svg class="h-5 w-5 rtl:rotate-180"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+          <path stroke-width="2"
+            d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+        </span>
+        <span class="text-sm font-bold transition-all group-hover:ms-8">
         Prev Page
+        </span>
       </RouterLink>  
+     </div>
 
       <RouterLink 
         :to="{ name: 'teachers', query: {page: page + 1}}" 
