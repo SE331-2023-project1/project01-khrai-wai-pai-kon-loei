@@ -8,26 +8,30 @@ const props = defineProps({
     require: true,
   },
 });
-
 </script>
 
 <template>
   <article>
-    <RouterLink :to="{name: 'student-detail', params:{studentid: student?.studentid}}">    
-    <div class="card-wrapper">
-      <div class="card-body">
-        <img
-          class="pic w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
-          :src="student?.profileimage"
-        />
-        <h2>
-          {{ student?.name }} {{ student?.surname }}
-          <span>({{ student?.studentid }})</span>
-        </h2>
-        <p class="card-email">{{ student?.courselist }}</p>
-        <p>{{ student?.comment }} {{ student?.teacherID }}</p>
+    <RouterLink
+      :to="{
+        name: 'student-detail',
+        params: { studentid: student?.studentid },
+      }"
+    >
+      <div class="card-wrapper">
+        <div class="card-body">
+          <img
+            class="pic w-24 h-24 object-cover mb-3 rounded-full shadow-lg"
+            :src="student?.profileimage"
+          />
+          <h2>
+            {{ student?.name }} {{ student?.surname }}
+            <span>({{ student?.studentid }})</span>
+          </h2>
+          <p class="card-email">{{ student?.courselist }}</p>
+          <p>{{ student?.teacherID }}</p>
+        </div>
       </div>
-    </div>
     </RouterLink>
   </article>
 </template>
