@@ -1,18 +1,32 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import type { Student } from "@/type";
+import { Student } from "@/type";
 import StudentService from "@/services/StudentService";
-
-const students = ref<Student | null>(null);
+import { Teacher } from "@/type";
+import TeacherService from "@/services/TeacherService";
 
 const props = defineProps({
   studentid: String,
+  teacherID: String,
 });
 
+const student = ref<Student | null>(null);
+const teacher = ref<Teacher | null>(null);
+
 StudentService.getStudentById(String(props.studentid))
-  .then((response) => {
-    students.value = response.data[0];
-    console.log(students.value);
+  .then((studentResponse) => {
+    student.value = studentResponse.data[0];
+    console.log(student.value);
+
+    // Fetch the associated teacher using the student's teacherID
+    StudentService.getTeacherByStudent(student.value) // Use the new function
+      .then((teacherResponse) => {
+        teacher.value = teacherResponse.data[0];
+        console.log(teacher.value);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   })
   .catch((error) => {
     console.log(error);
@@ -35,26 +49,28 @@ function deleteComment(index: number) {
 
 <template>
   <main class="container">
-    <div v-if="students">
+    <!-- Student information -->
+    <div v-if="student">
       <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
         <div class="flex items-center space-x-4">
           <img
             class="w-24 h-24 object-cover rounded-full shadow-lg"
-            :src="students?.profileimage"
+            :src="student.profileimage"
           />
           <div>
             <h1 class="text-2xl font-semibold">
-              {{ students.name }} {{ students.surname }}
+              {{ student.name }} {{ student.surname }}
             </h1>
-            <h1 class="text-lg">{{ students.studentid }}</h1>
-            <h1 class="text-lg">{{ students.courselist }}</h1>
-            <h1 class="text-lg">{{ students.teacherID }}</h1>
+            <h1 class="text-lg">{{ student.studentid }}</h1>
+            <h1 class="text-lg">{{ student.courselist }}</h1>
+            <h1 class="text-lg">{{ student.teacherID }}</h1>
           </div>
         </div>
 
+        <!-- Comments section -->
         <div class="border-t border-gray-300 pt-4">
           <h2 class="text-lg font-semibold">Comment</h2>
-          <p class="mb-2">{{ students.comment }}</p>
+          <p class="mb-2">{{ student.comment }}</p>
 
           <div class="mt-4">
             <div
@@ -86,6 +102,23 @@ function deleteComment(index: number) {
       </div>
     </div>
 
-    <RouterView :student="student"></RouterView>
+    <!-- Teacher information -->
+    <div v-if="teacher">
+      <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+        <div class="flex items-center space-x-4">
+          <img
+            class="w-24 h-24 object-cover rounded-full shadow-lg"
+            :src="teacher.profileimage"
+          />
+          <div>
+            <h1 class="text-2xl font-semibold">
+              {{ teacher.name }} {{ teacher.surname }}
+            </h1>
+            <h1 class="text-lg">{{ teacher.courselist }}</h1>
+            <h1 class="text-lg">{{ teacher.teacherID }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
