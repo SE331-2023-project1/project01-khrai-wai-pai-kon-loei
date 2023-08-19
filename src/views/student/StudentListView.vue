@@ -117,6 +117,10 @@ const hasNextPage = computed(() => {
 </template>
 
 <style scoped>
+
+#nprogress .bar {
+background: rgb(34, 221, 90) !important;
+}
 .flex {
   @apply flex-1;
 }
