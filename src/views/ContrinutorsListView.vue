@@ -31,13 +31,13 @@ watchEffect(() => {
 
 <template>
   <main class="container">
-    <ContributorsCard v-for="contributor in contributors" :key="contributor.studentId" :contributor="contributor"></ContributorsCard>
+    <ContributorsCard  v-for="contributor in contributors" :key="contributor.studentId" :contributor="contributor"></ContributorsCard>
   </main>
 </template>
 
 <style scoped>
 .container {
-  margin-top: 3rem;
+  margin: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
