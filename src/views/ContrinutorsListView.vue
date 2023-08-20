@@ -30,6 +30,8 @@ watchEffect(() => {
 
 
 <template>
+  <div class="name">KHRAI WAI PAI KON LOEI</div>
+
   <div class="moon"></div>
   <div class="cloud">
     <div class="blush"></div>
@@ -43,6 +45,14 @@ watchEffect(() => {
 </template>
 
 <style scoped>
+
+.name {
+  position: absolute;
+  left: 11em;
+  top: 3em;
+  font-size: 50px;
+}
+
 .cloud {
   background-color: #f5f5f5;
   height: 6.25em;
