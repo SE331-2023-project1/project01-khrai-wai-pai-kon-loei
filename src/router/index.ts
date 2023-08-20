@@ -15,6 +15,7 @@ import Continutors from "../views/ContrinutorsListView.vue";
 import type { Style } from "util";
 
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

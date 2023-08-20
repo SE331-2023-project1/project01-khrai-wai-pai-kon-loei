@@ -12,15 +12,14 @@
 2. Admin Functionalities :
 - [ ]  Ability to add student data
 - [x]  Ability to view a list of all students
-- [ ]  Ability to create advisor details
 - [x]  View student list and click on a student's name to route to student details:
 - [x]  Student Detail Page :
     - Student 
     - Teacher 
     - Student and Teacher Profile images
-- [ ]  Comments section where admin can enter comments given by the teacher to the student
+- [x]  Comments section where admin can enter comments given by the teacher to the student
 3. Storage and State Management :
-- [ ]  Save comments to Pinia
+- [x]  Save comments to Pinia
 - [x]  Save student and teacher data to Pinia
 4. User Interface :
 - [x]  Student list
