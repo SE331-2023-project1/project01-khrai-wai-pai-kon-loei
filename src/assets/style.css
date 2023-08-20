@@ -116,7 +116,7 @@ aside .logo img {
   aside.is-expanded .footer {
     @apply opacity-0;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: ) {
     aside {
       @apply fixed z-[99];
     }
