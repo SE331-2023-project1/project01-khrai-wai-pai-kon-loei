@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { Student, Teacher } from '@/type';
+import { type Student, type Teacher } from '@/type';
 import { injectStudentService } from '@/services/StudentService';
 import { injectTeacherService } from '@/services/TeacherService';
 

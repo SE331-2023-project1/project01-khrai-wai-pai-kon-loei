@@ -32,7 +32,6 @@ export default {
   }
   
 }
-// ... โค้ดอื่น ๆ ...
 
 export function provideStudentService() {
   provide(studentServiceSymbol, useStudentService());

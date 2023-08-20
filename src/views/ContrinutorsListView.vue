@@ -31,7 +31,7 @@ watchEffect(() => {
 
 <template>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" >
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
   <div class="wrapper">
@@ -40,7 +40,6 @@ watchEffect(() => {
   
   
   <main class="container">
-    <!-- <span class="name">KHRAI WAI PAI KON LOEI</span> -->
     <ContributorsCard  v-for="contributor in contributors" :key="contributor.studentId" :contributor="contributor"></ContributorsCard>
     <div class="moon hide-on-small-screen"></div>
     <div class="cloud hide-on-small-screen">
