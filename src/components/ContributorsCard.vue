@@ -98,7 +98,7 @@ body {background: #eee;}
 }
 
 .card-wrapper:hover {
-  transform: scale(1.07);
+  /* transform: scale(1.07); */
   box-shadow: 0 3px 12px 0 #b32fa5;
   /* box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2); */
 }
