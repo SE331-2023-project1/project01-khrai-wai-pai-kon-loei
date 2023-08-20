@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Teacher } from "@/type";
+import { type Teacher } from "@/type";
 import TeacherService from "@/services/TeacherService";
 
 const props = defineProps({
