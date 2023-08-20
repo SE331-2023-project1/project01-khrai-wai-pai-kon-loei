@@ -30,7 +30,8 @@ watchEffect(() => {
 
 
 <template>
-  <div class="name">KHRAI WAI PAI KON LOEI</div>
+<div class="name text-3xl font-bold text-white hover:text-purple-700 transition duration-300 transform hover:scale-105 cursor-pointer">KHRAI WAI PAI KON LOEI</div>
+
 
   <div class="moon"></div>
   <div class="cloud">
