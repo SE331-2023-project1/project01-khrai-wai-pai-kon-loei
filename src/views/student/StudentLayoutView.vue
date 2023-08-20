@@ -108,24 +108,24 @@ StudentService.getStudentById(String(props.studentid))
             class="w-24 h-24 object-cover rounded-full shadow-lg"
             :src="student.profileimage"/>
           <div>
-          <div class="grid grid-cols-1 gap-1 pt-5 pb-1.5 bg-purple-50 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 pt-5 pb-1.5 sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Name</dt>
             <h1 class="text-lg">
               {{ student.name }} {{ student.surname }}
             </h1>
           </div>
 
-          <div class="grid grid-cols-1 gap-1 py-1.5 bg-pink-50 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 py-1.5  sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Student ID</dt>
             <h1 class="text-lg">{{ student.studentid }}</h1>
           </div>
 
-          <div class="grid grid-cols-1 gap-1 py-1 bg-purple-50 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 py-1 sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Course</dt>
             <h1 class="text-lg">{{ student.courselist }}</h1>
           </div>
 
-          <div class="grid grid-cols-1 gap-1 py-1.5 bg-pink-50 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 py-1.5 sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Teacher</dt>
             <h1 class="text-lg">{{ student.teacherID }}</h1>
           </div>
@@ -196,7 +196,7 @@ StudentService.getStudentById(String(props.studentid))
             <textarea v-model="newComment" placeholder="Write a comment"
               class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"></textarea>
             <button @click="submitComment"
-              class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 ease-in-out">
+              class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300 ease-in-out">
               Submit
             </button>
           </div>
