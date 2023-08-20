@@ -7,7 +7,6 @@ import TeacherDetailView from "@/views/teacher/TeacherDetailView.vue";
 import TeacherLayoutView from "@/views/teacher/TeacherLayoutView.vue";
 import Continutors from "../views/ContrinutorsListView.vue";
 import NProgress from "nprogress";
-import type { Style } from "util";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
