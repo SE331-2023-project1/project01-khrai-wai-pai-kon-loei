@@ -22,3 +22,4 @@ export interface Contributor {
   studentId: String,
   profileimage: String,
 }
+

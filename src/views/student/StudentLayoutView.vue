@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { Student } from "@/type";
 import StudentService from "@/services/StudentService";
 import { Teacher } from "@/type";
 import TeacherService from "@/services/TeacherService";
+import { useCommentsStore } from "@/stores/comment";
+
+const commentsStore = useCommentsStore();
+
+const studentComments = ref<{ [studentId: string]: string[] }>({});
 
 const props = defineProps({
   studentid: String,
@@ -12,6 +17,33 @@ const props = defineProps({
 
 const student = ref<Student | null>(null);
 const teacher = ref<Teacher | null>(null);
+const comments = ref<string[]>([]);
+const newComment = ref("");
+
+const loadComments = async () => {
+  if (student.value) {
+    if (!(student.value.studentid in studentComments.value)) {
+      studentComments.value[student.value.studentid] = [];
+    }
+    comments.value = studentComments.value[student.value.studentid];
+  }
+};
+
+onMounted(async () => {
+  const studentResponse = await StudentService.getStudentById(props.studentid);
+  student.value = studentResponse.data[0];
+  loadComments();
+});
+
+function submitComment() {
+  if (newComment.value.trim() !== "") {
+    if (!(student.value.studentid in studentComments.value)) {
+      studentComments.value[student.value.studentid] = [];
+    }
+    studentComments.value[student.value.studentid].push(newComment.value);
+    newComment.value = ""; // Clear the input after submitting
+  }
+}
 
 StudentService.getStudentById(String(props.studentid))
   .then((studentResponse) => {
@@ -32,19 +64,18 @@ StudentService.getStudentById(String(props.studentid))
     console.log(error);
   });
 
-const newComment = ref("");
-const comments = ref([]);
+// const newComment = ref("");
 
-function submitComment() {
-  if (newComment.value.trim() !== "") {
-    comments.value.push(newComment.value);
-    newComment.value = ""; // Clear the input after submitting
-  }
-}
+// function submitComment() {
+//   if (newComment.value.trim() !== "") {
+//     commentsStore.addComment(newComment.value);
+//     newComment.value = ""; // Clear the input after submitting
+//   }
+// }
 
-function deleteComment(index: number) {
-  comments.value.splice(index, 1);
-}
+// function deleteComment(index: number) {
+//   commentsStore.deleteComment(index);
+// }
 </script>
 
 <template>
@@ -86,7 +117,7 @@ function deleteComment(index: number) {
           </div>
         </div>
 
-        <!-- Comments section -->
+        <!-- Comments section
         <div class="border-t border-gray-300 pt-4">
           <h2 class="text-lg font-semibold">Comment</h2>
           <p class="mb-2">{{ student.comment }}</p>
@@ -104,6 +135,32 @@ function deleteComment(index: number) {
             </div>
           </div>
 
+          <div class="comment-box mt-4">
+            <textarea
+              v-model="newComment"
+              placeholder="Write a comment"
+              class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"
+            ></textarea>
+            <button
+              @click="submitComment"
+              class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 ease-in-out"
+            >
+              Submit
+            </button>
+          </div>
+        </div> -->
+
+        <!-- Comments section -->
+        <div class="border-t border-gray-300 pt-4">
+          <h2 class="text-lg font-semibold">All Comments</h2>
+          <div v-for="(comment, index) in comments" :key="index">
+            <p>{{ comment }}</p>
+          </div>
+        </div>
+
+        <!-- Add Comment section -->
+        <div class="border-t border-gray-300 pt-4">
+          <h2 class="text-lg font-semibold">Add Comment</h2>
           <div class="comment-box mt-4">
             <textarea
               v-model="newComment"
