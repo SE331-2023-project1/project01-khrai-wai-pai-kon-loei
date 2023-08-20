@@ -83,18 +83,34 @@ StudentService.getStudentById(String(props.studentid))
     <!-- Student information -->
     <div v-if="student">
       <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
-        <div class="flex items-center space-x-4">
+        <!-- <div class="flex items-center space-x-4"> -->
+        <div class="-my-3 divide-y divide-gray-100 text-sm m-5 mt-2">
           <img
             class="w-24 h-24 object-cover rounded-full shadow-lg"
-            :src="student.profileimage"
-          />
+            :src="student.profileimage"/>
           <div>
-            <h1 class="text-2xl font-semibold">
+
+          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-xl font-semibold">Name</dt>
+            <h1 class="text-lg">
               {{ student.name }} {{ student.surname }}
             </h1>
+          </div>
+
+          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-xl font-semibold">Student ID</dt>
             <h1 class="text-lg">{{ student.studentid }}</h1>
+          </div>
+
+          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-xl font-semibold">Course</dt>
             <h1 class="text-lg">{{ student.courselist }}</h1>
+          </div>
+
+          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-xl font-semibold">Teacher</dt>
             <h1 class="text-lg">{{ student.teacherID }}</h1>
+          </div>
           </div>
         </div>
 

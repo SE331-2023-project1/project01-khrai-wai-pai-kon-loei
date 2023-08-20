@@ -77,7 +77,7 @@ aside .logo img {
     /* Main white color */
   }
   aside .menu .button.router-link-exact-active {
-    @apply bg-[#FF69B4]  border-0 border-solid border-white bg-[url('https://img1.picmix.com/output/stamp/normal/1/7/0/2/352071_1ebb6.gif')];
+    @apply bg-[#FF69B4]  border-0 border-solid border-white bg-[url('https://img1.picmix.com/output/stamp/normal/6/4/2/6/1896246_c6324.gif')];
   
     /* Pink pastel color */
   }
