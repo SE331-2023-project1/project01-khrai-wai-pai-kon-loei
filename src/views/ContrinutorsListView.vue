@@ -30,9 +30,12 @@ watchEffect(() => {
 
 
 <template>
-<div class="name text-3xl font-bold text-white hover:text-purple-700 transition duration-300 transform hover:scale-105 cursor-pointer">KHRAI WAI PAI KON LOEI</div>
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <div class="wrapper">
+  <span class="name">KHRAI WAI PAI KON LOEI</span>
+  </div>
   <div class="moon"></div>
   <div class="cloud">
     <div class="blush"></div>
@@ -47,11 +50,37 @@ watchEffect(() => {
 
 <style scoped>
 
+.wrapper {
+  color: #f5f5f5;
+  list-style: none;
+  font-weight: 500;
+}
+
+.wrapper span::after{
+  content:"";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 1.5s steps(22) infinite;
+}
+
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
 .name {
   position: absolute;
   left: 11em;
   top: 3em;
   font-size: 50px;
+  font-family: 'Itim', cursive;
 }
 
 .cloud {
@@ -93,8 +122,8 @@ watchEffect(() => {
   height: 9.37em;
   width: 9.37em;
   border-radius: 50%;
-  position: absolute;
-  right: 17em;
+  position: relative;
+  left: 98em;
   top: 2.25em;
   overflow: hidden;
   z-index: -2;
