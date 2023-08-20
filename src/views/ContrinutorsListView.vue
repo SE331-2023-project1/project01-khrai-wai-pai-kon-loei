@@ -30,21 +30,25 @@ watchEffect(() => {
 
 
 <template>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
   <div class="wrapper">
-  <span class="name">KHRAI WAI PAI KON LOEI</span>
+  
   </div>
-  <div class="moon"></div>
-  <div class="cloud">
-    <div class="blush"></div>
-    <div class="eye-l"></div>
-    <div class="eye-r"></div>
-    <div class="mouth"></div>
-  </div>
+  
+  
   <main class="container">
+    <!-- <span class="name">KHRAI WAI PAI KON LOEI</span> -->
     <ContributorsCard  v-for="contributor in contributors" :key="contributor.studentId" :contributor="contributor"></ContributorsCard>
+    <div class="moon hide-on-small-screen"></div>
+    <div class="cloud hide-on-small-screen">
+    <div class="blush hide-on-small-screen"></div>
+    <div class="eye-l hide-on-small-screen"></div>
+    <div class="eye-r hide-on-small-screen"></div>
+    <div class="mouth hide-on-small-screen"></div>
+  </div>
   </main>
 </template>
 
@@ -76,7 +80,7 @@ watchEffect(() => {
 }
 
 .name {
-  position: absolute;
+  position: fixed;
   left: 11em;
   top: 3em;
   font-size: 50px;
@@ -84,14 +88,25 @@ watchEffect(() => {
 }
 
 .cloud {
+  margin-top: auto;
   background-color: #f5f5f5;
   height: 6.25em;
   width: 20.62em;
-  position: absolute;
+  position: fixed;
   margin: auto;
-  left: 1350px;
+  /* left: 1350px; */
   top: 9.75em;
   border-radius: 6.25em;
+  z-index: -1;
+}
+.hide-on-small-screen {
+  display: block; /* or any other initial display value */
+}
+
+@media (max-width: 1152px) {
+  .hide-on-small-screen {
+    display: none;
+  }
 }
 
 .cloud:before {
@@ -122,8 +137,8 @@ watchEffect(() => {
   height: 9.37em;
   width: 9.37em;
   border-radius: 50%;
-  position: relative;
-  left: 98em;
+  position: fixed;
+  margin-left: 10%;
   top: 2.25em;
   overflow: hidden;
   z-index: -2;
