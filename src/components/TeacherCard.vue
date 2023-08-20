@@ -54,7 +54,7 @@ const props = defineProps({
 }
 
 .card-wrapper:hover {
-  transform: scale(1.01);
+  transform: scale(1.07);
   box-shadow: 0 3px 12px 0 #80354a;
   /* box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2); */
 }
