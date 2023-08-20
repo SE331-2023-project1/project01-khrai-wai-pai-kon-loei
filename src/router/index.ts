@@ -1,13 +1,19 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router'
+import StudentlayoutView from '@/views/student/StudentLayoutView.vue'
+import StudentDetailView from '@/views/student/StudentDetailView.vue'
+import StudentService from '@/services/StudentService'
+import { storeToRefs } from 'pinia'
+import { useStudentStore } from '@/stores/student';
+import { useStudentAllStore } from '@/stores/all_student';
+import { ref } from 'vue'
+import NProgress from 'nprogress'
 import Student from "../views/student/StudentListView.vue";
-import StudentDetailView from "@/views/student/StudentDetailView.vue";
-import StudentLayoutView from "@/views/student/StudentLayoutView.vue";
 import Teacher from "../views/teacher/TeacherListView.vue";
 import TeacherDetailView from "@/views/teacher/TeacherDetailView.vue";
 import TeacherLayoutView from "@/views/teacher/TeacherLayoutView.vue";
 import Continutors from "../views/ContrinutorsListView.vue";
-import NProgress from "nprogress";
 import type { Style } from "util";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +26,14 @@ const router = createRouter({
         page: parseInt((route.query?.page as string) || "1"),
         pageSize: parseInt((route.query?.page as string) || "2"),
       }),
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AboutView.vue')
     },
     {
       path: "/teacher",
@@ -37,10 +51,20 @@ const router = createRouter({
     },
 
     {
-      path: "/student/:studentid",
-      name: "student-layout",
-      component: StudentLayoutView,
+      path: '/student/:studentid',
+      name: 'student-layout',
+      component: StudentlayoutView,
       props: true,
+      beforeEnter: (to) => {
+        const studentid: number = parseInt(to.params.id as string) || 0;
+        const studentStore = useStudentStore();
+        const studentStore_all = useStudentAllStore();
+        const { student_all } = storeToRefs(studentStore_all);
+        console.log(student_all.value);
+        const keep = student_all.value[studentid - 1];
+        console.log(keep);
+        studentStore.setStudent(keep);
+      },
 
       children: [
         {

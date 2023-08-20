@@ -1,62 +1,130 @@
 <script setup lang="ts">
-import StudentCard from "../../components/StudentCard.vue";
-import type { Student } from "@/type";
-import StudentService from "@/services/StudentService";
-import type { AxiosResponse } from "axios";
-import { ref, type Ref, watchEffect, computed } from "vue";
-import NProgress from "nprogress";
-import { useRouter } from "vue-router";
-import { onBeforeRouteUpdate } from "vue-router";
+import StudentCard from '../../components/StudentCard.vue'
+import type { Student } from '@/type'
+import { ref, computed, type Ref, onMounted } from 'vue'
+import type { AxiosResponse } from 'axios';
+import { useRouter } from 'vue-router'
+import NProgress from 'nprogress'
+import { onBeforeRouteLeave } from 'vue-router'
+import { storeToRefs } from 'pinia'
+import { useStudentAllStore } from '@/stores/all_student'
+import isFormValid from '@/views/AboutView.vue'
+import addStudent from '@/views/AboutView.vue'
+import StudentService from '@/services/StudentService'
+import { onBeforeRouteUpdate } from 'vue-router'
 
-const students: Ref<Array<Student>> = ref([]);
-const totalStudent = ref<number>(10);
-const router = useRouter();
+
+const studentsPerPage = pageSize.value;
+const studentStore_all = useStudentAllStore()
+const { student_all } = storeToRefs(studentStore_all)
+const students: Ref<Student[]> = ref([])
+const totalStudent = ref<number>(0)
+const router = useRouter
 const props = defineProps({
   page: {
     type: Number,
-    required: true,
-  },
-});
-const pageSize = ref(6); //Defualt page size
+    required: true
+  }
+})
 
-// watchEffect (() => {
-//   StudentService.getStudents(pageSize.value, props.page)
-//   .then((response: AxiosResponse<Student[]>) => {
-//     students.value = response.data
-//     totalStudent.value = response.headers['x-total-count']
-//   })
-// })
 
-StudentService.getStudents(6, props.page)
-  .then((response: AxiosResponse<Student[]>) => {
-    students.value = response.data;
-    totalStudent.value = response.headers["x-total-count"];
-  })
-  .catch(() => {
-    router.push({ name: "NetworkError" });
-  });
+const pageSize = 6;
 
-onBeforeRouteUpdate((to, from, next) => {
-  const toPage = Number(to.query.page);
-
-  StudentService.getStudents(6, toPage)
-    .then((response: AxiosResponse<Student[]>) => {
-      students.value = response.data;
-      totalStudent.value = response.headers["x-total-count"];
-      next();
-    })
-    .catch(() => {
-      next({ name: "NetworkError" });
-    });
+const displayedStudents: Ref<Student[]> = computed(() => {
+  const startIndex = (props.page - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize, student_all.value.length);
+  return student_all.value.slice(startIndex, endIndex);
 });
 
 const hasNextPage = computed(() => {
-  const totalPages = Math.ceil(totalStudent.value / pageSize.value);
-  return props.page.valueOf() < totalPages;
+  const totalPages = Math.ceil(student_all.value.length / pageSize);
+  return props.page < totalPages;
 });
+
+onBeforeRouteLeave((to, from, next) => {
+  if (isFormValid.value) {
+    new addStudent()
+  }
+  next()
+});
+
+onBeforeRouteLeave((to, from, next) => {
+  if (isFormValid.value) {
+    new addStudent()
+  }
+  next()
+})
+NProgress
 </script>
 
+
 <template>
+  <main class="events">
+      <div class="container">
+          <StudentCard
+            class="student"
+            v-for="student in displayedStudents"
+            :key="student.studentid"
+            :student="student"
+          ></StudentCard>
+      </div>
+      <div class="flex"></div>
+      <div class="pagination flex justify-between items-center mt-8">
+        <RouterLink
+          :to="{ name: 'students', query: { page: page - 1 } }"
+          rel="prev"
+          v-if="page != 1"
+          class="btn btn-blue group relative overflow-hidden"
+        >
+         
+          <span class="absolute -start-full transition-all group-hover:start-4">
+            <svg
+              class="h-5 w-5 rtl:rotate-180"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>
+          </span>
+          <span class="text-sm font-bold transition-all group-hover:ms-8">
+            Prev Page
+          </span>
+        </RouterLink>
+    
+  <RouterLink
+          :to="{ name: 'students', query: { page: page + 1 } }"
+          rel="next"
+          v-if="hasNextPage"
+          class="btn btn-blue group relative overflow-hidden"
+        >
+         
+          <span class="absolute -end-full transition-all group-hover:end-4">
+            <svg
+              class="h-5 w-5 rtl:rotate-180"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+          <span class="text-sm font-bold transition-all group-hover:me-8">
+            Next Page
+          </span>
+        </RouterLink>
+  
+  </div>
+    </main>
+  </template>
+
+
+
+
+
+
+
+
+
+<!-- <template>
   <main class="events">
     <div class="container">
       <StudentCard
@@ -74,7 +142,7 @@ const hasNextPage = computed(() => {
           v-if="page != 1"
           class="btn btn-blue group relative overflow-hidden"
         >
-          <!-- make button responsive -->
+         
           <span class="absolute -start-full transition-all group-hover:start-4">
             <svg
               class="h-5 w-5 rtl:rotate-180"
@@ -97,7 +165,7 @@ const hasNextPage = computed(() => {
           v-if="hasNextPage"
           class="btn btn-blue group relative overflow-hidden"
         >
-          <!-- make button responsive -->
+         
           <span class="absolute -end-full transition-all group-hover:end-4">
             <svg
               class="h-5 w-5 rtl:rotate-180"
@@ -114,7 +182,7 @@ const hasNextPage = computed(() => {
       </div>
     </div>
   </main>
-</template>
+</template> -->
 
 <style scoped>
 

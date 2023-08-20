@@ -1,10 +1,59 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
+import { onMounted } from 'vue';
+import TeacherService from "@/services/TeacherService";
+import { useTeacherAllStore } from "@/stores/all_teacher";
+import StudentService from '@/services/StudentService'
+import { useStudentAllStore } from '@/stores/all_student'
+import { useMessageStore } from './stores/message';
+import { storeToRefs } from 'pinia';
+
+
+const store = useMessageStore()
+const { message } = storeToRefs(store)
+const studentStore_all = useStudentAllStore();
+const teacherStoreAll = useTeacherAllStore();
+
+onMounted(async () => {
+  try {
+    const response = await TeacherService.getTeachers();
+    teacherStoreAll.setTeacherArray(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+})
+
+onMounted(async () => {
+  try {
+    const response = await StudentService.getStudents();console.log('k',response);
+    studentStore_all.setStudentArray(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 
 </script>
 
 <template>
+      <header>
+		<div class="app">
+     <Sidebar/>
+	 
+	 <div id="flashMessage" v-if="message">
+      <h4> {{ message }} </h4>
+    </div>
+	 <RouterView />
+	 
+    	</div>
+    
+  </header>
+  
+</template>
+
+
+<!-- <template>
   <header>
     <div class="app">
      <Sidebar/>
@@ -12,7 +61,7 @@ import Sidebar from './components/Sidebar.vue'
     </div>
   </header>
   
-</template>
+</template> -->
 
 <style lang="scss">
 
