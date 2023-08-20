@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
-import { Student } from "@/type";
+import { type Student } from "@/type";
 import StudentService from "@/services/StudentService";
-import { Teacher } from "@/type";
+import { type Teacher } from "@/type";
 import TeacherService from "@/services/TeacherService";
 import { useCommentsStore } from "@/stores/comment";
 import { onBeforeRouteLeave } from "vue-router";
@@ -100,6 +100,7 @@ StudentService.getStudentById(String(props.studentid))
   <main class="container">
     <!-- Student information -->
     <div v-if="student">
+    <span class=" block text-center rounded-t-lg p-3 font-semibold text-lg bg-[url('https://tinyurl.com/2ce24ehd')]">Student information</span>
     <div style="background-color: #fff9fd;">
       <div class="p-6 rounded-lg shadow-md space-y-4">
         <!-- <div class="flex items-center space-x-4 m-5 mt-2"> -->

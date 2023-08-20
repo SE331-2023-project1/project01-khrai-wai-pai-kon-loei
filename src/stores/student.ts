@@ -1,5 +1,8 @@
-import type { Student } from '@/type'
 import { defineStore } from 'pinia'
+import { type Student, type Teacher } from '@/type';
+import { injectStudentService } from '@/services/StudentService';
+import { injectTeacherService } from '@/services/TeacherService';
+
 export const useStudentStore = defineStore('student', {
     state: () => ({
         student: null as Student | null
@@ -10,6 +13,8 @@ export const useStudentStore = defineStore('student', {
         }
     }
 })
+
+
 
 
 
