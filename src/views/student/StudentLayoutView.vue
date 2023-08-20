@@ -101,30 +101,30 @@ StudentService.getStudentById(String(props.studentid))
     <!-- Student information -->
     <div v-if="student">
       <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
-        <!-- <div class="flex items-center space-x-4"> -->
+        <!-- <div class="flex items-center space-x-4 m-5 mt-2"> -->
         <div class="-my-3 divide-y divide-gray-100 text-sm m-5 mt-2">
           <img
             class="w-24 h-24 object-cover rounded-full shadow-lg"
             :src="student.profileimage"/>
           <div>
-          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 pt-5 pb-1.5 sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Name</dt>
             <h1 class="text-lg">
               {{ student.name }} {{ student.surname }}
             </h1>
           </div>
 
-          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 py-1.5 sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Student ID</dt>
             <h1 class="text-lg">{{ student.studentid }}</h1>
           </div>
 
-          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 py-1 sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Course</dt>
             <h1 class="text-lg">{{ student.courselist }}</h1>
           </div>
 
-          <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+          <div class="grid grid-cols-1 gap-1 py-1.5 sm:grid-cols-3 sm:gap-4">
             <dt class="text-xl font-semibold">Teacher</dt>
             <h1 class="text-lg">{{ student.teacherID }}</h1>
           </div>
