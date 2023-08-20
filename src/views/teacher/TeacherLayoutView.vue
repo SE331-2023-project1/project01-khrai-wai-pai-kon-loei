@@ -37,7 +37,7 @@ TeacherService.getTeacherById(String(props.teacherID))
   <main class="container">
     <!-- Student information -->
     <div v-if="teacher">
-      <span class=" block text-center rounded-t-lg p-3 font-semibold text-lg bg-[url('https://shorturl.at/ajvw2')]">Teacher information</span>
+      <span class=" block text-center rounded-t-lg p-3 font-semibold text-lg bg-[url('https://shorturl.at/bmCE2')]">Teacher information</span>
       <div class="bg-white p-6 rounded-b-lg shadow-md space-y-4">
         <div class="flex items-center space-x-8">
           <img

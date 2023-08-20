@@ -100,6 +100,7 @@ StudentService.getStudentById(String(props.studentid))
   <main class="container">
     <!-- Student information -->
     <div v-if="student">
+    <span class=" block text-center rounded-t-lg p-3 font-semibold text-lg bg-[url('https://tinyurl.com/2ce24ehd')]">Student information</span>
     <div style="background-color: #fff9fd;">
       <div class="p-6 rounded-lg shadow-md space-y-4">
         <!-- <div class="flex items-center space-x-4 m-5 mt-2"> -->
