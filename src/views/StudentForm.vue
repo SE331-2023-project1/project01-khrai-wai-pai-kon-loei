@@ -122,28 +122,6 @@ const addStudent = () => {
         <input class="teacherlink" v-model="newTeacherImage" placeholder="Teacher Image URL" />
         <button class="button-19" id="button-19-teacher" type="submit" :disabled="!isFormValidTeacher">Add Teacher</button>
       </form>
-  </div>
-      </div>
-    <div v-if="selectedForm === 'student'" class="form-section">
-      <h1 class="font-bold text-3xl">Add new student form</h1>
-      <form @submit.prevent="addStudent">
-        <input v-model="newStudentName" placeholder="Student Name" />
-        <input v-model="newStudentSurname" placeholder="Student Surname" />
-        <input v-model="newStudentID" placeholder="Student ID" />
-        <input v-model="newStudentImage" placeholder="Student Image URL" />
-        <input v-model="newStudentTeacher" type="string" placeholder="Teacher ID" />
-        <button class="button-19" id="button-19-student" type="submit" :disabled="!isFormValid">Add Student</button>
-      </form>
-    </div>
-    <div v-if="selectedForm === 'teacher'" class="form-section">
-      <div class="from">
-        <h1 class="font-bold text-3xl">Add new teacher form</h1>
-        <form @submit.prevent="addTeacher">
-          <input class="teachername" v-model="newTeacherName" placeholder="Teacher Name" />
-          <input class="teachersurname" v-model="newTeacherSurname" placeholder="Teacher Surname" />
-          <input class="teacherlink" v-model="newTeacherImage" placeholder="Teacher Image URL" />
-          <button class="button-19" type="submit" :disabled="!isFormValidTeacher">Add Teacher</button>
-        </form>
       </div>
     </div>
   </div>
