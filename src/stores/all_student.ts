@@ -10,6 +10,15 @@ export const useStudentAllStore = defineStore('student_all', {
         },
         pushNewStudent(student_all : Student){
             this.student_all.push(student_all)
+        },
+        getAllStudent() {
+            return this.student_all;
+        },
+        findStudentById(studentId: string) {
+            return this.student_all.find(student => student.studentid === studentId);
+        },
+        getLength() {
+            return this.student_all.length;
         }
     }
 })

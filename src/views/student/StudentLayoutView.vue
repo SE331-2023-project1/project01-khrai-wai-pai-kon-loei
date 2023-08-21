@@ -7,6 +7,9 @@ import TeacherService from "@/services/TeacherService";
 import { useCommentsStore } from "@/stores/comment";
 import { onBeforeRouteLeave } from "vue-router";
 import { useRouter } from "vue-router";
+import { useStudentStore } from '@/stores/student';
+
+const studentStore = useStudentStore()
 
 const router = useRouter()
 
@@ -43,9 +46,12 @@ const newComment = ref("");
 //   }
 // };
 
+console.log(props)
 onMounted(async () => {
-  const studentResponse = await StudentService.getStudentById(props.studentid);
-  student.value = studentResponse.data[0];
+
+  // const studentResponse = await StudentService.getStudentById(props.studentid);
+  student.value = useStudentStore().getAllStudent()
+  console.log(useStudentStore().getAllStudent())
   // No need to call loadComments();
 });
 
@@ -67,28 +73,29 @@ function submitComment() {
 
 // });
 
-StudentService.getStudentById(String(props.studentid))
-  .then((studentResponse) => {
-    student.value = studentResponse.data[0];
+// StudentService.getStudentById(String(props.studentid))
+//   .then((studentResponse) => {
+//     student.value = studentResponse.data[0];
 
-    // Fetch the associated teacher using the student's teacherID
-    StudentService.getTeacherByStudent(student.value) // Use the new function
-      .then((teacherResponse) => {
-        teacher.value = teacherResponse.data[0];
+//     // Fetch the associated teacher using the student's teacherID
+//     StudentService.getTeacherByStudent(student.value) // Use the new function
+//       .then((teacherResponse) => {
+//         teacher.value = teacherResponse.data[0];
 
-      })
-      .catch((error) => {
-        
-      });
-  })
-  .catch((error) => {
-    console.log(error)
-        if (error.response && error.response.status === 404 ) {
-         router.push({ name: '404-resource', params: { resource: 'student'} })
-        }else {
-            router.push({ name: 'network-error' })
-        }
-  });
+//       })
+//       .catch((error) => {
+
+//       });
+//   })
+//   .catch((error) => {
+//     console.log(error)
+//         if (error.response && error.response.status === 404 ) {
+//          router.push({ name: '404-resource', params: { resource: 'student'} })
+//         }else {
+//             router.push({ name: 'network-error' })
+//         }
+//   });
+
 
 // const newComment = ref("");
 
@@ -108,56 +115,56 @@ StudentService.getStudentById(String(props.studentid))
   <main class="container">
     <!-- Student information -->
     <div v-if="student">
-    <span class=" block text-center rounded-t-lg p-3 font-semibold text-lg bg-[url('https://tinyurl.com/2ce24ehd')]">Student information</span>
-    <div style="background-color: #fff9fd;">
-      <div class="p-6 rounded-lg shadow-md space-y-4">
-        <!-- <div class="flex items-center space-x-4 m-5 mt-2"> -->
-        <div class="-my-3 divide-y divide-gray-100 text-sm m-5 mt-2">
-          <img
-            class="w-24 h-24 object-cover rounded-full shadow-lg"
-            :src="student.profileimage"/>
-          <div>
-          <div class="grid grid-cols-1 gap-1 pt-5 pb-1.5 sm:grid-cols-3 sm:gap-4">
-            <dt class="text-xl font-semibold">Name</dt>
-            <h1 class="text-lg">
-              {{ student.name }} {{ student.surname }}
-            </h1>
-          </div>
-
-          <div class="grid grid-cols-1 gap-1 py-1.5  sm:grid-cols-3 sm:gap-4">
-            <dt class="text-xl font-semibold">Student ID</dt>
-            <h1 class="text-lg">{{ student.studentid }}</h1>
-          </div>
-
-          <div class="grid grid-cols-1 gap-1 py-1 sm:grid-cols-3 sm:gap-4">
-            <dt class="text-xl font-semibold">Course</dt>
-            <h1 class="text-lg">{{ student.courselist }}</h1>
-          </div>
-
-          <div class="grid grid-cols-1 gap-1 py-1.5 sm:grid-cols-3 sm:gap-4">
-            <dt class="text-xl font-semibold">Teacher</dt>
-            <h1 class="text-lg">{{ student.teacherID }}</h1>
-          </div>
-          </div>
-        </div>
-
-        <!-- Teacher information -->
-
-        <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
-          <h1 class="text-xl">Teacher :</h1>
-          <div class="flex items-center space-x-4">
-            <img class="w-24 h-24 object-cover rounded-full shadow-lg" :src="teacher?.profileimage" />
+      <span
+        class=" block text-center rounded-t-lg p-3 font-semibold text-lg bg-[url('https://tinyurl.com/2ce24ehd')]">Student
+        information</span>
+      <div style="background-color: #fff9fd;">
+        <div class="p-6 rounded-lg shadow-md space-y-4">
+          <!-- <div class="flex items-center space-x-4 m-5 mt-2"> -->
+          <div class="-my-3 divide-y divide-gray-100 text-sm m-5 mt-2">
+            <img class="w-24 h-24 object-cover rounded-full shadow-lg" :src="student.profileimage" />
             <div>
-              <h1 class="text-2xl font-semibold">
-                {{ teacher?.name }} {{ teacher?.surname }}
-              </h1>
-              <h1 class="text-lg">{{ teacher?.courselist }}</h1>
-              <h1 class="text-lg">{{ teacher?.teacherID }}</h1>
+              <div class="grid grid-cols-1 gap-1 pt-5 pb-1.5 sm:grid-cols-3 sm:gap-4">
+                <dt class="text-xl font-semibold">Name</dt>
+                <h1 class="text-lg">
+                  {{ student.name }} {{ student.surname }}
+                </h1>
+              </div>
+
+              <div class="grid grid-cols-1 gap-1 py-1.5  sm:grid-cols-3 sm:gap-4">
+                <dt class="text-xl font-semibold">Student ID</dt>
+                <h1 class="text-lg">{{ student.studentid }}</h1>
+              </div>
+
+              <div class="grid grid-cols-1 gap-1 py-1 sm:grid-cols-3 sm:gap-4">
+                <dt class="text-xl font-semibold">Course</dt>
+                <h1 class="text-lg">{{ student.courselist }}</h1>
+              </div>
+
+              <div class="grid grid-cols-1 gap-1 py-1.5 sm:grid-cols-3 sm:gap-4">
+                <dt class="text-xl font-semibold">Teacher</dt>
+                <h1 class="text-lg">{{ student.teacherID }}</h1>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Comments section
+          <!-- Teacher information -->
+
+          <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <h1 class="text-xl">Teacher :</h1>
+            <div class="flex items-center space-x-4">
+              <img class="w-24 h-24 object-cover rounded-full shadow-lg" :src="teacher?.profileimage" />
+              <div>
+                <h1 class="text-2xl font-semibold">
+                  {{ teacher?.name }} {{ teacher?.surname }}
+                </h1>
+                <h1 class="text-lg">{{ teacher?.courselist }}</h1>
+                <h1 class="text-lg">{{ teacher?.teacherID }}</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comments section
         <div class="border-t border-gray-300 pt-4">
           <h2 class="text-lg font-semibold">Comment</h2>
           <p class="mb-2">{{ student.comment }}</p>
@@ -190,28 +197,28 @@ StudentService.getStudentById(String(props.studentid))
           </div>
         </div> -->
 
-        <!-- Comments section -->
-        <div class="border-t border-gray-300 pt-4">
-          <h2 class="text-lg font-semibold">All Comments</h2>
-          <div v-for="(comment, index) in comments" :key="index">
-            <p>{{ comment }}</p>
+          <!-- Comments section -->
+          <div class="border-t border-gray-300 pt-4">
+            <h2 class="text-lg font-semibold">All Comments</h2>
+            <div v-for="(comment, index) in comments" :key="index">
+              <p>{{ comment }}</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Add Comment section -->
-        <div class="border-t border-gray-300 pt-4">
-          <h2 class="text-lg font-semibold">Add Comment</h2>
-          <div class="comment-box mt-4">
-            <textarea v-model="newComment" placeholder="Write a comment"
-              class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"></textarea>
-            <button @click="submitComment"
-              class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300 ease-in-out">
-              Submit
-            </button>
+          <!-- Add Comment section -->
+          <div class="border-t border-gray-300 pt-4">
+            <h2 class="text-lg font-semibold">Add Comment</h2>
+            <div class="comment-box mt-4">
+              <textarea v-model="newComment" placeholder="Write a comment"
+                class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-500"></textarea>
+              <button @click="submitComment"
+                class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300 ease-in-out">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </main>
 </template>

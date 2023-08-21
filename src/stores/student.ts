@@ -8,7 +8,10 @@ export const useStudentStore = defineStore('student', {
     actions: {
         setStudent(student: Student){
             this.student = student
-        }
+        },
+        getAllStudent() {
+            return this.student;
+        },
     }
 })
 

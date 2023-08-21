@@ -17,7 +17,6 @@ import NetworkErrorView from '@/views/NetworkErrorView.vue';
 
 
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -57,16 +56,14 @@ const router = createRouter({
       path: '/student/:studentid',
       name: 'student-layout',
       component: StudentlayoutView,
-      props: true,
+      props: (route) => ({ id: route.params.id }),
       beforeEnter: (to) => {
-        const studentid: number = parseInt(to.params.id as string) || 0;
-        const studentStore = useStudentStore();
+        const id = to.params.studentid as string
+        const studentStore = useStudentStore()
         const studentStore_all = useStudentAllStore();
-        const { student_all } = storeToRefs(studentStore_all);
-        console.log(student_all.value);
-        const keep = student_all.value[studentid - 1];
-        console.log(keep);
-        studentStore.setStudent(keep);
+        console.log(studentStore_all.getAllStudent())
+        studentStore.setStudent(studentStore_all.findStudentById(id))
+        console.log(studentStore.getAllStudent())
       },
 
       children: [
@@ -106,8 +103,23 @@ const router = createRouter({
     },
   ],
 });
-router.beforeEach(() => {
+router.beforeEach(async (to, from, next) => {
   NProgress.start();
+
+  const studentStore_all = useStudentAllStore();
+
+  if (studentStore_all.getLength() === 0) {
+    try {
+      const response = await StudentService.getStudents();
+      studentStore_all.setStudentArray(response.data);
+      next();
+    } catch (error) {
+      console.error("Error fetching students:", error);
+      next({ name: 'network-error', params: { message: 'Failed to fetch students.' }}); // Redirect to an error page if you want
+    }
+  } else {
+    next();
+  }
 });
 
 router.afterEach(() => {
