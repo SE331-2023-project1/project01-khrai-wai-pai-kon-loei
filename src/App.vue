@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import Sidebar from './components/Sidebar.vue'
-import { onMounted } from 'vue';
+import { RouterLink, RouterView } from "vue-router";
+import Sidebar from "./components/Sidebar.vue";
+import { onMounted } from "vue";
 import TeacherService from "@/services/TeacherService";
 import { useTeacherAllStore } from "@/stores/all_teacher";
-import StudentService from '@/services/StudentService'
-import { useStudentAllStore } from '@/stores/all_student'
-import { useMessageStore } from './stores/message';
-import { storeToRefs } from 'pinia';
+import StudentService from "@/services/StudentService";
+import { useStudentAllStore } from "@/stores/all_student";
+import { useMessageStore } from "./stores/message";
+import { storeToRefs } from "pinia";
 
-
-const store = useMessageStore()
-const { message } = storeToRefs(store)
+const store = useMessageStore();
+const { message } = storeToRefs(store);
 const studentStore_all = useStudentAllStore();
 const teacherStoreAll = useTeacherAllStore();
 
@@ -22,7 +21,7 @@ onMounted(async () => {
   } catch (error) {
     console.error(error);
   }
-})
+});
 
 // onMounted(async () => {
 //   try {
@@ -32,25 +31,19 @@ onMounted(async () => {
 //     console.error(error);
 //   }
 // });
-
-
 </script>
 
 <template>
   <header>
+    <div id="flashMessage" v-if="message">
+      <h4>{{ message }}</h4>
+    </div>
     <div class="app">
       <Sidebar />
-
-      <div id="flashMessage" v-if="message">
-        <h4> {{ message }} </h4>
-      </div>
       <RouterView />
-
     </div>
-
   </header>
 </template>
-
 
 <!-- <template>
   <header>
@@ -77,7 +70,7 @@ onMounted(async () => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fira sans', sans-serif;
+  font-family: "Fira sans", sans-serif;
 }
 
 body {
@@ -136,5 +129,18 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+
+#flashMessage {
+  animation: redfade 3s ease-in-out;
+}
+
+@keyframes redfade {
+  from {
+    background: red;
+  }
+  to {
+    background: transparent;
+  }
 }
 </style>
