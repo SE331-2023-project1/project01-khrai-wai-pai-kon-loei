@@ -32,11 +32,3 @@ export default {
   }
   
 }
-
-export function provideStudentService() {
-  provide(studentServiceSymbol, useStudentService());
-}
-
-export function injectStudentService() {
-  return inject(studentServiceSymbol) as ReturnType<typeof useStudentService>;
-}

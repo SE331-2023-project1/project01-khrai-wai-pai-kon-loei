@@ -12,8 +12,6 @@ import Teacher from "../views/teacher/TeacherListView.vue";
 import TeacherDetailView from "@/views/teacher/TeacherDetailView.vue";
 import TeacherLayoutView from "@/views/teacher/TeacherLayoutView.vue";
 import Continutors from "../views/ContrinutorsListView.vue";
-import type { Style } from "util";
-
 
 
 const router = createRouter({
@@ -29,12 +27,12 @@ const router = createRouter({
       }),
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/form',
+      name: 'form',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/StudentForm.vue')
     },
     {
       path: "/teacher",
