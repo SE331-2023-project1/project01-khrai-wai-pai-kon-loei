@@ -101,7 +101,7 @@
       </select>
     </div>
       <div v-if="selectedForm === 'student'" class="form-section">
-        <h1 class="font-bold text-3xl">Add new student form</h1>
+        <h1 class="font-bold text-3xl mb-4">Add new student form</h1>
         <form @submit.prevent="addStudent">
           <input v-model="newStudentName" placeholder="Student Name" />
           <input v-model="newStudentSurname" placeholder="Student Surname" />
@@ -113,12 +113,12 @@
       </div>
       <div v-if="selectedForm === 'teacher'" class="form-section">
         <div class="from">
-          <h1 class="font-bold text-3xl">Add new teacher form</h1>
+          <h1 class="font-bold text-3xl mb-4">Add new teacher form</h1>
       <form @submit.prevent="addTeacher">
         <input class="teachername" v-model="newTeacherName" placeholder="Teacher Name" />
         <input class="teachersurname" v-model="newTeacherSurname" placeholder="Teacher Surname" />
         <input class="teacherlink" v-model="newTeacherImage" placeholder="Teacher Image URL" />
-        <button class="button-19" type="submit" :disabled="!isFormValidTeacher">Add Teacher</button>
+        <button class="button-19" id="button-19-teacher" type="submit" :disabled="!isFormValidTeacher">Add Teacher</button>
       </form>
   </div>
       </div>
@@ -144,7 +144,8 @@
       margin-top: 20px;
       padding: 20px;
       border: 1px solid #ccc;
-      background-color: #9dcdff;
+      /* background-color: #9dcdff; */
+      background-image: url(https://tinyurl.com/52pvsnnd);
       border-radius: 10px;
       box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
       color:#5f5f5f;
@@ -160,7 +161,11 @@
     }
     
     #button-19-student{
-      margin-left: 160px;
+      margin-left: 150px;
+    }
+
+    #button-19-teacher{
+      margin-left: 150px;
     }
       .button-19 {
         appearance: button;
@@ -175,6 +180,7 @@
       font-family: din-round,sans-serif;
       font-size: 15px;
       margin-left: 20px;
+      margin-top: 20px;
       font-weight: 700;
       letter-spacing: .8px;
       line-height: 20px;
