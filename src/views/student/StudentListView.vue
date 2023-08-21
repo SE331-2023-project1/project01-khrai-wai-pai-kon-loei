@@ -8,8 +8,8 @@ import NProgress from 'nprogress'
 import { onBeforeRouteLeave } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useStudentAllStore } from '@/stores/all_student'
-import isFormValid from '@/views/AboutView.vue'
-import addStudent from '@/views/AboutView.vue'
+import isFormValid from '@/views/StudentForm.vue'
+import addStudent from '@/views/StudentForm.vue'
 import StudentService from '@/services/StudentService'
 import { onBeforeRouteUpdate } from 'vue-router'
 
@@ -47,13 +47,6 @@ onBeforeRouteLeave((to, from, next) => {
   }
   next()
 });
-
-onBeforeRouteLeave((to, from, next) => {
-  if (isFormValid.value) {
-    new addStudent()
-  }
-  next()
-})
 NProgress
 </script>
 

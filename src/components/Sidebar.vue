@@ -26,6 +26,10 @@
 				<span class="material-symbols-outlined">school</span>
 				<span class="text">Teacher</span>
 			</RouterLink>
+			<RouterLink :to="{name: 'form'}" class="button">
+				<span class="material-symbols-outlined">note</span>
+				<span class="text">Form</span>
+			</RouterLink>
 		</div>
 	</aside>
 </template>
