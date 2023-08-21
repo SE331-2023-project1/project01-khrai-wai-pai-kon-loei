@@ -13,7 +13,8 @@ import TeacherDetailView from "@/views/teacher/TeacherDetailView.vue";
 import TeacherLayoutView from "@/views/teacher/TeacherLayoutView.vue";
 import Continutors from "../views/ContrinutorsListView.vue";
 import type { Style } from "util";
-
+import NotFoundView from '@/views/NotFoundView.vue'
+import NetworkErrorView from '@/views/NetworkErrorView.vue'
 
 
 const router = createRouter({
@@ -90,6 +91,17 @@ const router = createRouter({
           props: true,
         },
       ],
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'not-found',
+      component: NotFoundView
+    },
+    {
+      path: '/network-error',
+      name: 'network-error',
+      component: NetworkErrorView,
+      props: true
     },
   ],
 });

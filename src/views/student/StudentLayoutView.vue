@@ -6,6 +6,9 @@ import { type Teacher } from "@/type";
 import TeacherService from "@/services/TeacherService";
 import { useCommentsStore } from "@/stores/comment";
 import { onBeforeRouteLeave } from "vue-router";
+import { useRouter } from "vue-router";
+
+const router = useRouter()
 
 const commentsStore = useCommentsStore();
 
@@ -75,11 +78,16 @@ StudentService.getStudentById(String(props.studentid))
 
       })
       .catch((error) => {
-
+        
       });
   })
   .catch((error) => {
-
+    console.log(error)
+        if (error.response && error.response.status === 404 ) {
+         router.push({ name: '404-resource', params: { resource: 'student'} })
+        }else {
+            router.push({ name: 'network-error' })
+        }
   });
 
 // const newComment = ref("");
