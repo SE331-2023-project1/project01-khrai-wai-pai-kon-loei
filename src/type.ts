@@ -1,25 +1,25 @@
 export interface Student {
-  name: String,
-  surname: String,
-  studentid: String,
-  profileimage: String,
-  courselist: String[],
-  teacherID: String,
+  name: string,
+  surname: string,
+  studentid: string,
+  profileimage: string,
+  courselist: string[],
+  teacherID: string,
   comment: []
 }
 
 export interface Teacher {
-  name: String,
-  surname: String,
-  teacherID: String,
-  profileimage: String,
-  courselist: String[]
+  name: string,
+  surname: string,
+  teacherID: string,
+  profileimage: string,
+  courselist: string[]
 }
 
 export interface Contributor {
-  name: String,
-  surname: String,
-  studentId: String,
-  profileimage: String,
+  name: string,
+  surname: string,
+  studentId: string,
+  profileimage: string,
 }
 

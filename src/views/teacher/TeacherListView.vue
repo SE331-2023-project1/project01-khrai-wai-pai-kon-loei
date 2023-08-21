@@ -14,7 +14,6 @@ import TeacherService from '@/services/TeacherService'
 import { onBeforeRouteUpdate } from 'vue-router'
 
 
-const teachersPerPage = pageSize.value;
 const teacherStore_all = useTeacherAllStore()
 const { teacher_all } = storeToRefs(teacherStore_all)
 const teachers: Ref<Teacher[]> = ref([])

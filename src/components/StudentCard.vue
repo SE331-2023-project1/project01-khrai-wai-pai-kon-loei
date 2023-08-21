@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Student } from "@/type";
+import { type Student } from "@/type";
 import type { PropType } from "vue";
 
 const props = defineProps({

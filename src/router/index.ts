@@ -12,9 +12,8 @@ import Teacher from "../views/teacher/TeacherListView.vue";
 import TeacherDetailView from "@/views/teacher/TeacherDetailView.vue";
 import TeacherLayoutView from "@/views/teacher/TeacherLayoutView.vue";
 import Continutors from "../views/ContrinutorsListView.vue";
-import type { Style } from "util";
-import NotFoundView from '@/views/NotFoundView.vue'
-import NetworkErrorView from '@/views/NetworkErrorView.vue'
+import NotFoundView from '@/views/NotFoundView.vue';
+import NetworkErrorView from '@/views/NetworkErrorView.vue';
 
 
 

@@ -14,7 +14,6 @@ import StudentService from '@/services/StudentService'
 import { onBeforeRouteUpdate } from 'vue-router'
 
 
-const studentsPerPage = pageSize.value;
 const studentStore_all = useStudentAllStore()
 const { student_all } = storeToRefs(studentStore_all)
 const students: Ref<Student[]> = ref([])
