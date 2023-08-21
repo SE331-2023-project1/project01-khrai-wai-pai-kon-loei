@@ -47,13 +47,6 @@ onBeforeRouteLeave((to, from, next) => {
   }
   next()
 });
-
-onBeforeRouteLeave((to, from, next) => {
-  if (isFormValid.value) {
-    new addStudent()
-  }
-  next()
-})
 NProgress
 </script>
 
