@@ -11,6 +11,9 @@ import Student from "../views/student/StudentListView.vue";
 import Teacher from "../views/teacher/TeacherListView.vue";
 import TeacherDetailView from "@/views/teacher/TeacherDetailView.vue";
 import TeacherLayoutView from "@/views/teacher/TeacherLayoutView.vue";
+import TeacherService from '@/services/TeacherService'
+import { useTeacherStore } from '@/stores/teacher';
+import { useTeacherAllStore } from '@/stores/all_teacher';
 import Continutors from "../views/ContrinutorsListView.vue";
 import NotFoundView from '@/views/NotFoundView.vue';
 import NetworkErrorView from '@/views/NetworkErrorView.vue';
@@ -79,7 +82,15 @@ const router = createRouter({
       path: "/teacher/:teacherID",
       name: "teacher-layout",
       component: TeacherLayoutView,
-      props: true,
+      props: (route) => ({ id: route.params.id }),
+      beforeEnter: (to) => {
+        const id = to.params.teacherID as string
+        const teacherStore = useTeacherStore()
+        const teacherStore_all = useTeacherAllStore();
+        console.log(teacherStore_all.getAllTeacher())
+        teacherStore.setTeacher(teacherStore_all.findTeacherById(id))
+        console.log(teacherStore.getAllTeacher())
+      },
 
       children: [
         {
@@ -107,6 +118,7 @@ router.beforeEach(async (to, from, next) => {
   NProgress.start();
 
   const studentStore_all = useStudentAllStore();
+  const teacherStore_all = useTeacherAllStore();
 
   if (studentStore_all.getLength() === 0) {
     try {
@@ -116,6 +128,16 @@ router.beforeEach(async (to, from, next) => {
     } catch (error) {
       console.error("Error fetching students:", error);
       next({ name: 'network-error', params: { message: 'Failed to fetch students.' }}); // Redirect to an error page if you want
+    }
+  }
+  if (teacherStore_all.getLength() === 0) {
+    try {
+      const response = await TeacherService.getTeachers();
+      teacherStore_all.setTeacherArray(response.data);
+      next();
+    } catch (error) {
+      console.error("Error fetching teachers:", error);
+      next({ name: 'network-error', params: { message: 'Failed to fetch teachers.' }}); // Redirect to an error page if you want
     }
   } else {
     next();

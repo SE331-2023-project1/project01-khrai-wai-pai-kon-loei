@@ -13,10 +13,10 @@ const apiClient: AxiosInstance = axios.create({
 })
 
 export default {
-  getTeachers(perPage: number, page: number): Promise<AxiosResponse<Teacher[]>> {
+  getTeachers(): Promise<AxiosResponse<Teacher[]>> {
     // perPage is limit
     // page is number of pages
-    return apiClient.get<Teacher[]>('/teachers?_limit=' + perPage + '&_page=' + page)
+    return apiClient.get<Teacher[]>('teachers')
   },
   getTeacherById(teacherID : string) : Promise<AxiosResponse<Teacher>>{
     return apiClient.get<Teacher>('teachers/'+ '?teacherID='+teacherID.toString())

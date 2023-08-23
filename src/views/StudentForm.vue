@@ -38,7 +38,7 @@ const isFormValidTeacher = computed(
 const addTeacher = () => {
   if (isFormValidTeacher.value) {
     const newTeacher = {
-      teacherID: teacher_all.value.length + 1,
+      teacherID: teacher_all.value.length + 1 + "",
       name: newTeacherName.value,
       surname: newTeacherSurname.value,
       profileimage: newTeacherImage.value,

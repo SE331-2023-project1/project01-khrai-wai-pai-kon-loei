@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import { type Student } from "@/type";
-import StudentService from "@/services/StudentService";
 import { type Teacher } from "@/type";
-import TeacherService from "@/services/TeacherService";
 import { useCommentsStore } from "@/stores/comment";
 import { onBeforeRouteLeave } from "vue-router";
 import { useRouter } from "vue-router";
@@ -32,19 +30,6 @@ const comments = computed(() => {
 });
 const newComment = ref("");
 
-// const loadComments = async () => {
-//   if (student.value) {
-//     // console.log(student.value.studentid)
-//     // console.log(studentComments.value)
-//     // console.log(studentComments.value[student.value.studentid])
-//     if (!(student.value.studentid in studentComments.value)) {
-//       studentComments.value[student.value.studentid] = commentsStore.getComments(student.value.studentid)
-
-//     }
-//     console.log(commentsStore.getComments(student.value.studentid))
-//     comments.value = studentComments.value[student.value.studentid];
-//   }
-// };
 
 console.log(props)
 onMounted(async () => {
@@ -62,53 +47,6 @@ function submitComment() {
   }
 }
 
-// onBeforeRouteLeave(() => {
-
-//   // for (let index = 0; index < studentComments.value[student.value.studentid]; index++) {
-//   //   commentsStore.addComment(student.value.studentid, studentComments.value[student.value.studentid][index]);
-//   //   console.log(student.value.studentid, studentComments.value[student.value.studentid][index])
-//   // }
-
-//   commentsStore.addComment(student.value.studentid, studentComments.value[student.value.studentid]);
-
-// });
-
-// StudentService.getStudentById(String(props.studentid))
-//   .then((studentResponse) => {
-//     student.value = studentResponse.data[0];
-
-//     // Fetch the associated teacher using the student's teacherID
-//     StudentService.getTeacherByStudent(student.value) // Use the new function
-//       .then((teacherResponse) => {
-//         teacher.value = teacherResponse.data[0];
-
-//       })
-//       .catch((error) => {
-
-//       });
-//   })
-//   .catch((error) => {
-//     console.log(error)
-//         if (error.response && error.response.status === 404 ) {
-//          router.push({ name: '404-resource', params: { resource: 'student'} })
-//         }else {
-//             router.push({ name: 'network-error' })
-//         }
-//   });
-
-
-// const newComment = ref("");
-
-// function submitComment() {
-//   if (newComment.value.trim() !== "") {
-
-//     newComment.value = ""; // Clear the input after submitting
-//   }
-// }
-
-// function deleteComment(index: number) {
-//   commentsStore.deleteComment(index);
-// }
 </script>
 
 <template>

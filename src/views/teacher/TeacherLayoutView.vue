@@ -1,7 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { type Teacher } from "@/type";
 import TeacherService from "@/services/TeacherService";
+import { useCommentsStore } from "@/stores/comment";
+import { onBeforeRouteLeave } from "vue-router";
+import { useRouter } from "vue-router";
+import { useTeacherStore } from '@/stores/teacher';
+
+const teacherStore = useTeacherStore()
+
+const router = useRouter()
+
+const commentsStore = useCommentsStore();
+
+const teacherComments = ref<{ [teacherID: string]: string[] }>({});
 
 const props = defineProps({
   teacherID: String,
@@ -9,28 +21,17 @@ const props = defineProps({
 
 const teacher = ref<Teacher | null>(null);
 
-TeacherService.getTeacherById(String(props.teacherID))
-  .then((teacherResponse) => {
-    teacher.value = teacherResponse.data[0];
-    console.log(teacher.value);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
 
-// const newComment = ref("");
-// const comments = ref([]);
+console.log(props)
+onMounted(async () => {
 
-// function submitComment() {
-//   if (newComment.value.trim() !== "") {
-//     comments.value.push(newComment.value);
-//     newComment.value = ""; // Clear the input after submitting
-//   }
-// }
+  // const studentResponse = await StudentService.getStudentById(props.studentid);
+  teacher.value = useTeacherStore().getAllTeacher()
+  console.log(useTeacherStore().getAllTeacher())
+  // No need to call loadComments();
+});
 
-// function deleteComment(index: number) {
-//   comments.value.splice(index, 1);
-// }
+
 </script>
 
 <template>
