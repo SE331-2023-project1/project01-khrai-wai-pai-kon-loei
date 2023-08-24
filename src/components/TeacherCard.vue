@@ -23,7 +23,7 @@ const props = defineProps({
           {{ teacher?.name }} {{ teacher?.surname }}
           <span>({{ teacher?.teacherID }})</span>
         </h2>
-        <p class="card-email">{{ teacher?.courselist }}</p>
+        <p class="card-email"></p>
         <p>{{ teacher?.teacherID }}</p>
       </div>
     </div>

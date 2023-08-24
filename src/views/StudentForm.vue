@@ -26,6 +26,7 @@ const newStudentSurname = ref('')
 const newStudentImage = ref('')
 const newStudentID = ref('')
 const newStudentTeacher = ref()
+const newStudentCourselist = ref([])
 const selectedForm = ref('student')
 
 const isFormValidTeacher = computed(
@@ -66,7 +67,7 @@ const isFormValid = computed(
   () =>
     newStudentName.value.trim() !== '' &&
     newStudentSurname.value.trim() !== '' &&
-    newStudentImage.value.trim() !== ''
+    newStudentImage.value.trim() !== '' 
 )
 
 const addStudent = () => {
@@ -77,7 +78,7 @@ const addStudent = () => {
       surname: newStudentSurname.value,
       profileimage: newStudentImage.value,
       teacherID: newStudentTeacher.value,
-      courselist: [],
+      courselist: newStudentCourselist.value,
       comment: [],
     }
     store.updateMessage('New student has been added')
@@ -92,6 +93,7 @@ const addStudent = () => {
     newStudentSurname.value = ''
     newStudentImage.value = ''
     newStudentTeacher.value = ''
+    newStudentCourselist.value = []
   }
 }
 </script>
@@ -114,6 +116,7 @@ const addStudent = () => {
           <input v-model="newStudentID" placeholder="Student ID" />
           <input v-model="newStudentImage" placeholder="Student Image URL" />
           <input v-model="newStudentTeacher" type="string" placeholder="Teacher ID" />
+          <input v-model="newStudentCourselist" placeholder="Student course list" />
           <button class="button-19" id="button-19-student" type="submit" :disabled="!isFormValid">Add Student</button>
         </form>
       </div>
