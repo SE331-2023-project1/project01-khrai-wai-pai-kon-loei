@@ -163,11 +163,15 @@ const addStudent = () => {
     }
     
     #button-19-student{
-      margin-left: 150px;
+      margin: auto;
+      display: block;
+      margin-top: 20px;
     }
 
     #button-19-teacher{
-      margin-left: 150px;
+      margin: auto;
+      display: block;
+      margin-top: 20px;
     }
       .button-19 {
         appearance: button;
@@ -269,11 +273,10 @@ const addStudent = () => {
   border-radius: 10px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   color: #5f5f5f;
-
 }
 
 input {
-  width: 80%;
+  width: 100%;
   padding: 10px;
   margin: 5px 0;
   border: 1px solid #ccc;
@@ -281,7 +284,10 @@ input {
 }
 
 #button-19-student {
-  margin-left: 160px;
+  /* margin-left: 160px; */
+  margin: auto;
+  display: block;
+  margin-top: 20px;
 }
 
 .button-19 {
