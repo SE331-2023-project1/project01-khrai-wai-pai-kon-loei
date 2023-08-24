@@ -62,7 +62,7 @@ onMounted(async () => {
             <strong class="block font-medium text-gray-900"> Changes saved </strong>
 
             <p class="mt-1 text-sm text-gray-700">
-              Your product changes have been saved.
+              Your changes have been saved.
             </p>
           </div>
 
