@@ -132,7 +132,7 @@ const addStudent = () => {
 </template>
 
 
-    <style scoped>
+  <style scoped>
     .form {
       font-family: 'Roboto', sans-serif;
       padding: 20px;
@@ -159,7 +159,7 @@ const addStudent = () => {
     }
     
     input {
-      width: 80%;
+      width: 100%;
       padding: 10px;
       margin: 5px 0;
       border: 1px solid #ccc;
@@ -179,7 +179,7 @@ const addStudent = () => {
     }
       .button-19 {
         appearance: button;
-      background-color: #1899D6;
+      background-color: #b062b7;
       border: solid transparent;
       border-radius: 16px;
       border-width: 0 0 4px;
@@ -207,11 +207,12 @@ const addStudent = () => {
       vertical-align: middle;
       white-space: nowrap;
       width: 40%;
+      transition: transform 0.2s, rotate 0.2s;
     }
     
     .button-19:after {
       background-clip: padding-box;
-      background-color: #1CB0F6;
+      background-color: #cf6ed7;
       border: solid transparent;
       border-radius: 16px;
       border-width: 0 0 4px;
@@ -227,12 +228,15 @@ const addStudent = () => {
     
     .button-19:main,
     .button-19:focus {
+      outline: 2px solid #4F46E5;
       user-select: auto;
+      outline-offset: 4px
     }
     
     .button-19:hover:not(:disabled) {
       filter: brightness(1.1);
       -webkit-filter: brightness(1.1);
+      transform: rotate(2deg) scale(1.1);
     }
     
     .button-19:disabled {
@@ -254,121 +258,4 @@ const addStudent = () => {
       }
     }
     
-    </style>
-<style scoped>
-.form {
-  font-family: 'Roboto', sans-serif;
-  padding: 20px;
-}
-
-#formSelect {
-  margin: 10px 0;
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 20px;
-
-}
-
-.form-section {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #9dcdff;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  color: #5f5f5f;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#button-19-student {
-  /* margin-left: 160px; */
-  margin: auto;
-  display: block;
-  margin-top: 20px;
-}
-
-.button-19 {
-  appearance: button;
-  background-color: #1899D6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: din-round, sans-serif;
-  font-size: 15px;
-  margin-left: 20px;
-  font-weight: 700;
-  letter-spacing: .8px;
-  line-height: 20px;
-  outline: none;
-  overflow: visible;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 40%;
-}
-
-.button-19:after {
-  background-clip: padding-box;
-  background-color: #1CB0F6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-
-}
-
-.button-19:main,
-.button-19:focus {
-  user-select: auto;
-}
-
-.button-19:hover:not(:disabled) {
-  filter: brightness(1.1);
-  -webkit-filter: brightness(1.1);
-}
-
-.button-19:disabled {
-  cursor: auto;
-}
-
-h1 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-@media (min-width: 1024px) {
-  .form {
-    margin-top: 100px;
-  }
-
-  input {
-    width: 100%;
-  }
-
-  #button-19-student {
-    margin-left: 310px;
-  }
-}</style>
+  </style>
