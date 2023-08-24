@@ -26,7 +26,7 @@ const newStudentSurname = ref('')
 const newStudentImage = ref('')
 const newStudentID = ref('')
 const newStudentTeacher = ref()
-const newStudentCourselist = ref('')
+const newStudentCourselist = ref([])
 const selectedForm = ref('student')
 
 const isFormValidTeacher = computed(
@@ -67,8 +67,7 @@ const isFormValid = computed(
   () =>
     newStudentName.value.trim() !== '' &&
     newStudentSurname.value.trim() !== '' &&
-    newStudentImage.value.trim() !== '' &&
-    newStudentCourselist.value.trim() !== ''
+    newStudentImage.value.trim() !== '' 
 )
 
 const addStudent = () => {
@@ -94,7 +93,7 @@ const addStudent = () => {
     newStudentSurname.value = ''
     newStudentImage.value = ''
     newStudentTeacher.value = ''
-    newStudentCourselist.value = ''
+    newStudentCourselist.value = []
   }
 }
 </script>
