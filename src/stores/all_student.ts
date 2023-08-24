@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Student } from '@/type';
+import { useTeacherAllStore } from './all_teacher';
 export const useStudentAllStore = defineStore('student_all', {
     state: () => ({
         student_all: [] as Student[],
@@ -19,6 +20,17 @@ export const useStudentAllStore = defineStore('student_all', {
         },
         getLength() {
             return this.student_all.length;
-        }
+        },
+        getTeacherInStudent(studentId: string) {
+            const teacherStore = useTeacherAllStore();
+            const student = this.student_all.find(student => student.studentid === studentId);
+            if (student) {
+                const teacherId = student.teacherID;
+                const teacher = teacherStore.findTeacherById(teacherId); 
+                return teacher;
+            } else {
+                return null;
+            }
+        },
     }
 })
