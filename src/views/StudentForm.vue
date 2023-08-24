@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, type Ref, onMounted } from 'vue'
-import type { Student } from '@/type'
+import type { Student, Teacher } from '@/type'
 import { storeToRefs } from 'pinia'
 import { useStudentAllStore } from '@/stores/all_student'
 import router from '@/router';
@@ -37,18 +37,22 @@ const isFormValidTeacher = computed(
 
 const addTeacher = () => {
   if (isFormValidTeacher.value) {
-    const newTeacher = {
-      teacherID: teacher_all.value.length + 1 + "",
-      name: newTeacherName.value,
-      surname: newTeacherSurname.value,
-      profileimage: newTeacherImage.value,
-    };
+    const newTeacher:Teacher = {
+    teacherID: teacher_all.value.length + 1 + "",
+    name: newTeacherName.value,
+    surname: newTeacherSurname.value,
+    profileimage: newTeacherImage.value,
+    courselist: []
+};
     store.updateMessage('New teacher has been added')
     setTimeout(() => {
       store.resetMessage()
     }, 2000)
 
-    teacherStoreAll.pushNewTeacher(newTeacher);
+    const newteacher = newTeacher
+    if (newteacher) {
+      teacherStoreAll.pushNewTeacher(newteacher);
+    }
     newTeacherName.value = "";
     newTeacherSurname.value = "";
     newTeacherImage.value = "";
@@ -67,7 +71,7 @@ const isFormValid = computed(
 
 const addStudent = () => {
   if (isFormValid.value) {
-    const newStudent = {
+    const newStudent: Student = {
       studentid: student_all.value.length + 1 + "",
       name: newStudentName.value,
       surname: newStudentSurname.value,

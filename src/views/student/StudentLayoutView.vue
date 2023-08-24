@@ -42,7 +42,10 @@ onMounted(async () => {
 
 function submitComment() {
   if (newComment.value.trim() !== "") {
-    commentsStore.addComment(student.value.studentid, newComment.value);
+    const teststudent = student.value
+    if (teststudent) {
+      commentsStore.addComment(teststudent.studentid, newComment.value);
+    }
     newComment.value = "";
   }
 }

@@ -64,8 +64,13 @@ const router = createRouter({
         const id = to.params.studentid as string
         const studentStore = useStudentStore()
         const studentStore_all = useStudentAllStore();
+        const student = studentStore_all.findStudentById(id);
         console.log(studentStore_all.getAllStudent())
-        studentStore.setStudent(studentStore_all.findStudentById(id))
+        if (student) {
+          studentStore.setStudent(student);
+      } else {
+         
+      }
         console.log(studentStore.getAllStudent())
       },
 
@@ -87,8 +92,13 @@ const router = createRouter({
         const id = to.params.teacherID as string
         const teacherStore = useTeacherStore()
         const teacherStore_all = useTeacherAllStore();
+        const teacher = teacherStore_all.findTeacherById(id);
         console.log(teacherStore_all.getAllTeacher())
-        teacherStore.setTeacher(teacherStore_all.findTeacherById(id))
+        if (teacher) {
+          teacherStore.setTeacher(teacher);
+      } else {
+         
+      }
         console.log(teacherStore.getAllTeacher())
       },
 
