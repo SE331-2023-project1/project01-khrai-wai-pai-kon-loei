@@ -57,10 +57,6 @@ onMounted(async () => {
             <h1 class="text-lg">{{ teacher.teacherID }}</h1>
           </div>
 
-          <div class="grid grid-cols-1 gap-1 py-1.5  sm:grid-cols-3 sm:gap-4">
-            <dt class="text-xl font-semibold">Course</dt>
-            <h1 class="text-lg">{{ teacher.courselist }}</h1>
-          </div>
           </div>
         </div>
 
