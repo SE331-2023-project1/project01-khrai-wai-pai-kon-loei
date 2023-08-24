@@ -38,8 +38,10 @@ onMounted(async () => {
 
   student.value = useStudentStore().getAllStudent()
 
-
-  teacher.value = useStudentAllStore().getTeacherInStudent(student.value.studentid);
+  const studentvalue = student.value
+  if (studentvalue) {
+    teacher.value = useStudentAllStore().getTeacherInStudent(studentvalue.studentid);
+  }
 
 
 });
