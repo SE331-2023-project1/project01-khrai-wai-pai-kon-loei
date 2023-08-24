@@ -12,6 +12,7 @@ export const useStudentStore = defineStore('student', {
         getAllStudent() {
             return this.student;
         },
+        
     }
 })
 

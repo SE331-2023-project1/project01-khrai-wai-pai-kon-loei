@@ -6,6 +6,7 @@ import { useCommentsStore } from "@/stores/comment";
 import { onBeforeRouteLeave } from "vue-router";
 import { useRouter } from "vue-router";
 import { useStudentStore } from '@/stores/student';
+import { useStudentAllStore } from '@/stores/all_student'
 
 const studentStore = useStudentStore()
 
@@ -21,7 +22,8 @@ const props = defineProps({
 });
 
 const student = ref<Student | null>(null);
-const teacher = ref<Teacher | null>(null);
+const teacher = ref<Teacher | null | undefined>(null);
+
 const comments = computed(() => {
   if (student.value) {
     return commentsStore.getComments(student.value.studentid);
@@ -34,10 +36,12 @@ const newComment = ref("");
 console.log(props)
 onMounted(async () => {
 
-  // const studentResponse = await StudentService.getStudentById(props.studentid);
   student.value = useStudentStore().getAllStudent()
-  console.log(useStudentStore().getAllStudent())
-  // No need to call loadComments();
+
+
+  teacher.value = useStudentAllStore().getTeacherInStudent(student.value.studentid);
+
+
 });
 
 function submitComment() {
